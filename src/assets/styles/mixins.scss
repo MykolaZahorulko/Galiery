@@ -1,0 +1,68 @@
+@use 'sass:math';
+@mixin flexbox(){display: flex;display:-webkit-flex;display: -moz-flex;display: -o-flex;}
+@mixin objf($size){object-fit: $size;-webkit-object-fit: $size;-moz-object-fit: $size;-o-object-fit: $size;}
+@mixin objp($pos){object-position: $pos;-webkit-object-position: $pos;-moz-object-position: $pos;-o-object-position: $pos;}
+@mixin anim($name,$time,$scenariy,$howmany,$delay) {animation: $name $time $scenariy $howmany $delay;-webkit-animation: $name $time $scenariy $howmany $delay;-moz-animation: $name $time $scenariy $howmany $delay;-o-animation: $name $time $scenariy $howmany $delay}
+@mixin rotate($deg){transform: rotate($deg);-webkit-transform: rotate($deg);-moz-transform: rotate($deg);-o-transform: rotate($deg);}
+@mixin translate($degX, $degY) {transform: translate($degX, $degY);-webkit-transform: translate($degX, $degY);-moz-transform: translate($degX, $degY);-o-transform: translate($degX, $degY);}
+@mixin scale($num){transform: scale($num);-webkit-transform: scale($num);-moz-transform: scale($num);-o-transform: scale($num);}
+@mixin flexboxinline() {display: inline-flex;display:-webkit-inline-flex;-moz-display: inline-flex;-o-display: inline-flex;}
+@mixin transition($all, $time, $scenariy, $delay) {transition: $all $time $scenariy $delay;-webkit-transition: $all $time $scenariy $delay;-moz-transition: $all $time $scenariy $delay;-o-transition: $all $time $scenariy $delay;}
+@mixin box-shadow($shadow) {-webkit-box-shadow: $shadow;-moz-box-shadow: $shadow;-o-box-shadow: $shadow;box-shadow: $shadow;}
+@mixin border-radius($radius) {-webkit-border-radius: $radius;-moz-border-radius: $radius;-o-border-radius: $radius;border-radius: $radius;}
+@mixin text-overflow($value) {-webkit-text-overflow: $value;-moz-text-overflow: $value;-o-text-overflow: $value;text-overflow: $value;}
+@mixin blur($num) {backdrop-filter: blur($num);-webkit-backdrop-filter: blur($num);-moz-backdrop-filter: blur($num);-ms-backdrop-filter: blur($num);-o-backdrop-filter: blur($num);}
+//----------------------------------------------------------------------------------------
+//ADAPTIVE VALUE
+$maxWidth: 1600;/* --- Here we are write enter layout width {ALL} without PX --- */
+$maxWidthContainer: 1110;/* --- Here we are enter container width without PX --- */
+$ff: 'Montserrat', sans-serif;
+$fz: 20; /* --- Here we are enter general font size value on the website without PX ---   */
+// TO%
+@function prc($pxOne, $pxTwo) {
+    $result: math.div($pxOne, $pxTwo) * 100%;
+    @return $result;
+}
+//REM
+@function rem($px) {
+    $result: math.div($px, $fz) + rem;
+    @return $result;
+}
+//EM
+@function em($px) {
+    $result: math.div($px, $fz) + em;
+    @return $result;
+}
+//CONTAINER CLASS
+.container {
+  max-width: rem(1190);
+  margin: 0 auto;
+  padding: 0 rem(40);
+  @media (max-width: em(768)) {
+    max-width: rem(1150);
+    padding: 0 rem(20);
+  }
+}
+//ANOTHER STYLES
+
+//----------------------------------------------------------------------------------------
+@mixin adaptiv-value($property, $starSize, $minSize, $type) {
+  $addSize: $starSize - $minSize;
+  @if $type == 1 {
+    // If less than container
+    #{$property}: $starSize + px;
+    @media (max-width: calc(#{$maxWidthContainer} / #{$fz} * 1em)) {
+      #{$property}: calc(#{$minSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidthContainer - 320}));
+    }
+  } @else if $type == 2 {
+    // If more than container
+    #{$property}: $starSize + px;
+    @media (min-width: calc(#{$maxWidthContainer} / #{$fz} * 1em)) {
+      #{$property}: calc(#{$minSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidthContainer - 320}));
+    }
+  } @else {
+    // Always
+    #{$property}: calc(#{$minSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidthContainer - 320}));
+  }
+}
+//----------------------------------------------------------------------------------------

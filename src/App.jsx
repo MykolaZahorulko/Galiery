@@ -1,10 +1,21 @@
-import React from 'react'
+import React from 'react';
+import {BrowserRouter as Router, Route, Routes} from 'react-router-dom';
+import Home from './components/home/Home.jsx';
+import Layout from "./layout/Layout.jsx";
+// import AdminPanel from './components/AdminPanel';
 
-function App() {
-
+const App = () => {
     return (
-        <div>This is my app</div>
-    )
-}
+        <Router>
+            <Layout>
+                <Routes>
+                    <Route path="/" element={<Home />}></Route>
+                    {/*<Route path="/admin" component={AdminPanel}/>*/}
+                    {/* Додайте інші маршрути за необхідності */}
+                </Routes>
+            </Layout>
+        </Router>
+    );
+};
 
-export default App
+export default App;
