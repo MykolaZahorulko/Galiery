@@ -5,7 +5,7 @@
 :focus,:active{outline: none;}
 a:focus,a:active{outline: none;}
 nav,footer,header,aside{display: block;}
-html,body{height:100%;width:100%;font-size:100%;line-height:1.5;font-size: 20px;font-family: $ff;color: #000;-ms-text-size-adjust:100%;-moz-text-size-adjust:100%;-webkit-text-size-adjust:100%;}
+html,body{width:100%;font-size:100%;line-height:1.5;font-size: 20px;font-family: $ff;color: #000;-ms-text-size-adjust:100%;-moz-text-size-adjust:100%;-webkit-text-size-adjust:100%;}
 input,button,textarea{font-family:inherit;}
 input::-ms-clear{display: none;}
 button{cursor: pointer;}
@@ -16,5 +16,5 @@ ul li{list-style: none;}
 img{vertical-align: top;}
 h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: inherit;}
 a{ color: inherit;}
-body {background-color: #fff;&._lock {overflow: hidden;}}
+//body {background-color: #fff;}
 [class*="__container"] {max-width: rem(1190);margin: 0 auto;@include adaptiv-value(padding-right, 40, 20, 1);@include adaptiv-value(padding-left, 40, 20, 1);}
