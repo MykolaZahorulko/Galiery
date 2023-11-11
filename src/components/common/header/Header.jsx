@@ -61,19 +61,19 @@ const Header = () => {
                         style={{top: headerHeight}}
                     >
                         <ul className={styles.menu__list}>
-                            <li className={styles.menu__item} onClick={handleBurgerClick}><Link to="/">Головна</Link>
+                            <li className={styles.menu__item} onClick={() => dispatch(toggleBurgerMenu(false))}><Link to="/">Головна</Link>
                             </li>
-                            <li className={styles.menu__item} onClick={handleBurgerClick}><Link
+                            <li className={styles.menu__item} onClick={() => dispatch(toggleBurgerMenu(false))}><Link
                                 to="/preview">Передогляд</Link>
                             </li>
-                            <li className={styles.menu__item} onClick={handleBurgerClick}><Link
+                            <li className={styles.menu__item} onClick={() => dispatch(toggleBurgerMenu(false))}><Link
                                 to="/subscription">Підписка</Link></li>
-                            <li className={styles.menu__item} onClick={handleBurgerClick}><Link
+                            <li className={styles.menu__item} onClick={() => dispatch(toggleBurgerMenu(false))}><Link
                                 to="/contacts">Контакти</Link>
                             </li>
-                            <li className={styles.menu__item} onClick={handleBurgerClick}><Link to="/faq">F.A.Q.</Link>
+                            <li className={styles.menu__item} onClick={() => dispatch(toggleBurgerMenu(false))}><Link to="/faq">F.A.Q.</Link>
                             </li>
-                            <li className={styles.menu__item} onClick={handleBurgerClick}><Link to="/signin">
+                            <li className={styles.menu__item} onClick={() => dispatch(toggleBurgerMenu(false))}><Link to="/signin">
                                 <div className={`${styles.menu__item_icon} ${styles.img}`}>
                                     <svg width="13" height="14" viewBox="0 0 13 14" fill="none"
                                          xmlns="http://www.w3.org/2000/svg">
@@ -98,7 +98,7 @@ const Header = () => {
                             <div className={`${styles.panel__item} ${styles.img}`}><img
                                 src="./images/icons/language.svg" alt="Earth"/></div>
                             <Link className={`${styles.panel__item} ${styles.img}`} to="/signin"
-                                  onClick={handleBurgerClick}>
+                                  onClick={() => dispatch(toggleBurgerMenu(false))}>
                                 <svg width="18" height="19" viewBox="0 0 18 19" fill="none"
                                      xmlns="http://www.w3.org/2000/svg">
                                     <g clipPath="url(#clip0_2002_594)">
@@ -114,7 +114,7 @@ const Header = () => {
                                 </svg>
                             </Link>
                             <Link className={`${styles.panel__item} ${styles.img}`} to="/cart"
-                                  onClick={handleBurgerClick}><img
+                                  onClick={() => dispatch(toggleBurgerMenu(false))}><img
                                 src="./images/icons/cart.svg" alt="Cart"/></Link>
                         </div>
                     </div>
