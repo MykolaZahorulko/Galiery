@@ -89,11 +89,11 @@
   &__mobile_background {
     opacity: 0;
     visibility: hidden;
-    @include transition(all, 0.4s, linear, 0s);
+    @include transition(all, 0.3s, linear, 0s);
     @media (max-width: em(768)) {
       &._active {
         visibility: visible;
-        @include transition(all, 0.4s, linear, 0s);
+        @include transition(all, 0.3s, linear, 0s);
         z-index: 11;
         position: absolute;
         top: 0;
@@ -115,14 +115,14 @@
       padding-bottom: rem(150);
       max-height: rem(845);
       position: fixed;
-      @include transition(all, 0.4s, linear, 0s);
+      @include transition(all, 0.3s, linear, 0s);
       left: -100%;
       width: rem(282);
       height: 100%;
       background-color: #ffffff;
       color: #000;
       &._active {
-        @include transition(all, 0.4s, linear, 0s);
+        @include transition(all, 0.3s, linear, 0s);
         left: 0;
       }
     }
@@ -139,6 +139,13 @@
       .menu__item {
         font-weight: 600;
         margin-left: rem(40);
+        @include transition(all, 0.3s, ease, 0s);
+        @media (min-width: em(768)) {
+          &:hover {
+            @include transition(all, 0.3s, ease, 0s);
+            color: red;
+          }
+        }
 
         &_icon {
           margin-right: rem(5);
@@ -206,9 +213,39 @@
       display: flex;
 
       .panel__item {
+        cursor: pointer;
         margin-left: rem(15);
+
+        &:first-child {
+          margin-left: rem(40);
+        }
+
+        @media (max-width: em(1024)) {
+          &:first-child {
+            margin-left: rem(15);
+          }
+        }
         @include adaptiv-value(width, 25, 18, 1);
         @include adaptiv-value(height, 25, 18, 1);
+        @include transition(all, 0.3s, ease, 0s);
+
+        svg {
+          path {
+            @include transition(all, 0.3s, ease, 0s);
+          }
+        }
+
+        @media (min-width: em(768)) {
+          &:hover {
+            svg {
+              path {
+                @include transition(all, 0.3s, ease, 0s);
+                fill: #D30303;
+              }
+            }
+          }
+        }
+
         @media (max-width: em(860)) {
           width: rem(20);
           height: rem(20);

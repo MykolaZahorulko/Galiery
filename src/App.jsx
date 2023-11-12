@@ -7,6 +7,7 @@ import Subscription from "./components/pages/subscription/Subscription.jsx";
 import Contacts from "./components/pages/contacts/Contacts.jsx";
 import Faq from "./components/pages/faq/Faq.jsx";
 import Signin from "./components/pages/signin/Signin.jsx";
+import Cart from "./components/pages/cart/Cart.jsx";
 // import AdminPanel from './components/AdminPanel';
 
 const App = () => {
@@ -20,6 +21,7 @@ const App = () => {
                     <Route path="/contacts" element={<Contacts />}></Route>
                     <Route path="/signin" element={<Signin />}></Route>
                     <Route path="/faq" element={<Faq />}></Route>
+                    <Route path="/cart" element={<Cart />}></Route>
                     {/*<Route path="/admin" component={AdminPanel}/>*/}
                 </Routes>
             </Layout>
