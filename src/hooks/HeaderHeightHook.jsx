@@ -1,26 +1,32 @@
-import { useEffect, useState } from 'react';
-
+import {useEffect, useState} from 'react'
+import {useDispatch} from "react-redux"
+import {setHeaderHeight} from "../actions/headerAction.js";
 const useHeaderHeight = (headerClassName) => {
-  const [headerHeight, setHeaderHeight] = useState(0);
+    const [headerMenuHeight, setHeaderMenuHeight] = useState(0)
+    const dispatch = useDispatch()
 
-  useEffect(() => {
-    const updateHeaderHeight = () => {
-      const headerElement = document.querySelector(`.${headerClassName}`);
-      if (headerElement) {
-        setHeaderHeight(headerElement.clientHeight);
-      }
-    };
+    useEffect(() => {
+        dispatch(setHeaderHeight(headerMenuHeight))
+    }, [headerMenuHeight, dispatch])
 
-    updateHeaderHeight();
+    useEffect(() => {
+        const updateHeaderHeight = () => {
+            const headerElement = document.querySelector(`.${headerClassName}`);
+            if (headerElement) {
+                setHeaderMenuHeight(headerElement.clientHeight)
+            }
+        }
 
-    window.addEventListener('resize', updateHeaderHeight);
+        updateHeaderHeight();
 
-    return () => {
-      window.removeEventListener('resize', updateHeaderHeight);
-    };
-  }, [headerClassName]);
+        window.addEventListener('resize', updateHeaderHeight)
 
-  return headerHeight;
+        return () => {
+            window.removeEventListener('resize', updateHeaderHeight)
+        }
+    }, [headerClassName])
+
+    return headerMenuHeight;
 };
 
 export default useHeaderHeight;

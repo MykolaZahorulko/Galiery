@@ -1,5 +1,5 @@
 const initialState = {
-    headerHeight: 0,
+    headerHeight: 105,
 }
 
 const headerReducer = (state = initialState, action) => {

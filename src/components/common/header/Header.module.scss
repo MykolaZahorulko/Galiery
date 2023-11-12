@@ -152,6 +152,10 @@
 
         &:first-child {
           margin-left: rem(15);
+
+          span {
+            display: none;
+          }
         }
 
         @media (max-width: em(1024)) {
@@ -184,6 +188,13 @@
           }
           &:first-child {
             margin-left: 0;
+            display: flex;
+            justify-content: space-between;
+            padding-right: rem(20);
+
+            span {
+              display: block;
+            }
           }
         }
       }

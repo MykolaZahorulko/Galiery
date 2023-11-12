@@ -1,45 +1,17 @@
-import React, {useEffect, useRef} from 'react'
+import React, {useRef} from 'react'
 import styles from './Header.module.scss'
 import {Link} from "react-router-dom";
 import useHeaderHeight from "../../../hooks/HeaderHeightHook.jsx";
-import {useDispatch, useSelector} from "react-redux";
+import {useDispatch} from "react-redux";
 import {toggleBurgerMenu} from "../../../actions/toggleBurgerMenu.js";
-import {setHeaderHeight} from "../../../actions/headerAction.js";
+import useHeaderBurger from "../../../hooks/HeaderBurgerHook.jsx";
 
 const Header = () => {
-    const menuBurgerRef = useRef(null);
-    const headerHeight = useHeaderHeight(styles.header);
-    const isBurgerOpen = useSelector((state) => state.burger.isBurgerOpen);
-    const dispatch = useDispatch();
+    const menuBurgerRef = useRef(null)
+    const headerHeight = useHeaderHeight(styles.header)
+    const isBurgerOpen = useHeaderBurger(menuBurgerRef)
+    const dispatch = useDispatch()
 
-    useEffect(() => {
-        if (!isBurgerOpen) return;
-
-        document.body.style.overflow = isBurgerOpen ? 'hidden' : 'auto';
-
-        const handleClick = (e) => {
-            if (!menuBurgerRef.current) return;
-            if (!menuBurgerRef.current.contains(e.target)) {
-                dispatch(toggleBurgerMenu());
-            }
-        };
-
-        document.addEventListener('click', handleClick);
-
-        return () => {
-            document.body.style.overflow = 'auto';
-            document.removeEventListener('click', handleClick);
-        };
-    }, [isBurgerOpen, dispatch]);
-
-    useEffect(() => {
-        dispatch(setHeaderHeight(headerHeight));
-    }, [headerHeight, dispatch]);
-
-    const handleBurgerClick = (e) => {
-        e.stopPropagation();
-        dispatch(toggleBurgerMenu());
-    };
     return (
         <header className={styles.header}>
             <div className={styles.header__container}>
@@ -47,7 +19,10 @@ const Header = () => {
                     <div
                         ref={menuBurgerRef}
                         className={styles.header__burger}
-                        onClick={handleBurgerClick}
+                        onClick={(e) => {
+                            e.stopPropagation()
+                            dispatch(toggleBurgerMenu())
+                        }}
                     >
                         <span></span>
                     </div>
@@ -61,19 +36,28 @@ const Header = () => {
                         style={{top: headerHeight}}
                     >
                         <ul className={styles.menu__list}>
-                            <li className={styles.menu__item} onClick={() => dispatch(toggleBurgerMenu(false))}><Link to="/">Головна</Link>
+                            <li className={styles.menu__item}><Link
+                                to="/" onClick={() => dispatch(toggleBurgerMenu(false))}>Головна </Link> <span
+                                onClick={() => dispatch(toggleBurgerMenu(false))}><svg width="21" height="8"
+                                                                                       viewBox="0 0 21 8" fill="none"
+                                                                                       xmlns="http://www.w3.org/2000/svg"><path
+                                d="M20.3536 4.35355C20.5488 4.15829 20.5488 3.84171 20.3536 3.64645L17.1716 0.464466C16.9763 0.269204 16.6597 0.269204 16.4645 0.464466C16.2692 0.659728 16.2692 0.976311 16.4645 1.17157L19.2929 4L16.4645 6.82843C16.2692 7.02369 16.2692 7.34027 16.4645 7.53553C16.6597 7.7308 16.9763 7.7308 17.1716 7.53553L20.3536 4.35355ZM0 4.5H20V3.5H0V4.5Z"
+                                fill="#818181"/></svg></span>
                             </li>
-                            <li className={styles.menu__item} onClick={() => dispatch(toggleBurgerMenu(false))}><Link
-                                to="/preview">Передогляд</Link>
+                            <li className={styles.menu__item}><Link
+                                to="/preview" onClick={() => dispatch(toggleBurgerMenu(false))}>Передогляд</Link>
                             </li>
-                            <li className={styles.menu__item} onClick={() => dispatch(toggleBurgerMenu(false))}><Link
-                                to="/subscription">Підписка</Link></li>
-                            <li className={styles.menu__item} onClick={() => dispatch(toggleBurgerMenu(false))}><Link
-                                to="/contacts">Контакти</Link>
+                            <li className={styles.menu__item}><Link
+                                to="/subscription" onClick={() => dispatch(toggleBurgerMenu(false))}>Підписка</Link>
                             </li>
-                            <li className={styles.menu__item} onClick={() => dispatch(toggleBurgerMenu(false))}><Link to="/faq">F.A.Q.</Link>
+                            <li className={styles.menu__item}><Link
+                                to="/contacts" onClick={() => dispatch(toggleBurgerMenu(false))}>Контакти</Link>
                             </li>
-                            <li className={styles.menu__item} onClick={() => dispatch(toggleBurgerMenu(false))}><Link to="/signin">
+                            <li className={styles.menu__item}><Link
+                                to="/faq" onClick={() => dispatch(toggleBurgerMenu(false))}>F.A.Q.</Link>
+                            </li>
+                            <li className={styles.menu__item}><Link
+                                to="/signin" onClick={() => dispatch(toggleBurgerMenu(false))}>
                                 <div className={`${styles.menu__item_icon} ${styles.img}`}>
                                     <svg width="13" height="14" viewBox="0 0 13 14" fill="none"
                                          xmlns="http://www.w3.org/2000/svg">
