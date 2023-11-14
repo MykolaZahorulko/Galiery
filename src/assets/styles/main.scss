@@ -1,3 +1,4 @@
+//RESET STYLES
 @import 'mixins';
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&display=swap');
 *{padding: 0;margin: 0;border: 0;}
@@ -16,5 +17,3 @@ ul li{list-style: none;}
 img{vertical-align: top;}
 h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: inherit;}
 a{ color: inherit;}
-//body {background-color: #fff;}
-[class*="__container"] {max-width: rem(1190);margin: 0 auto;@include adaptiv-value(padding-right, 40, 20, 1);@include adaptiv-value(padding-left, 40, 20, 1);}

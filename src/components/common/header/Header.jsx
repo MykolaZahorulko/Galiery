@@ -14,7 +14,7 @@ const Header = () => {
 
     return (
         <header className={styles.header}>
-            <div className={styles.header__container}>
+            <div className={`${styles.header__container} ${styles.container}`}>
                 <div className={styles.header__body}>
                     <div
                         ref={menuBurgerRef}

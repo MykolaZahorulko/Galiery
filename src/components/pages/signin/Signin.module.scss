@@ -1,1 +1,21 @@
 @import '../../../assets/styles/mixins.scss';
+
+.signin {
+  display: block;
+
+  &__container {
+    @include adaptiv-value(max-width, 380, 340, 1);
+    @media (max-width: em(620)) {
+      max-width: none;
+    }
+  }
+
+  &__title {
+    display: block;
+    text-align: center;
+
+    &:after {
+      display: block;
+    }
+  }
+}
