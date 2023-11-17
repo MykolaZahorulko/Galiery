@@ -13,9 +13,44 @@
   &__title {
     display: block;
     text-align: center;
+    margin-bottom: rem(60);
 
     &:after {
       display: block;
     }
+  }
+
+  &__form {
+    display: block;
+  }
+
+  &__inputContainer {
+    display: flex;
+    flex-direction: column;
+    gap: rem(20);
+  }
+
+  &__label {
+    display: block;
+    @include adaptiv-value(margin-bottom, 15, 10, 1);
+  }
+
+  &__password_reset {
+    text-align: right;
+    display: flex;
+    justify-content: right;
+    @include transition(all, 0.4s, ease, 0s);
+    margin-top: rem(10);
+    margin-bottom: rem(30);
+
+    &:hover {
+      @include transition(all, 0.4s, ease, 0s);
+      color: #000;
+    }
+  }
+
+  &__isProfile_text {
+    margin-top: rem(20);
+    margin-bottom: rem(10);
   }
 }
