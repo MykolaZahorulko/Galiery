@@ -6,7 +6,7 @@ import Preview from "./components/pages/preview/Preview.jsx";
 import Subscription from "./components/pages/subscription/Subscription.jsx";
 import Contacts from "./components/pages/contacts/Contacts.jsx";
 import Faq from "./components/pages/faq/Faq.jsx";
-import Login from "./components/pages/signin/Login.jsx";
+import Login from "./components/pages/login/Login.jsx";
 import Cart from "./components/pages/cart/Cart.jsx";
 import Register from "./components/pages/register/Register.jsx";
 // import AdminPanel from './components/AdminPanel';

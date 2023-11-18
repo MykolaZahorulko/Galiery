@@ -1,1 +1,47 @@
 @import '../../../assets/styles/mixins.scss';
+
+.register {
+  max-width: rem(1190);
+  margin: 0 auto;
+  &__container {
+    @include adaptiv-value(max-width, 700, 660, 1);
+    margin: 0;
+  }
+
+  &__title {
+    margin-bottom: rem(60);
+    @media (max-width: em(620)) {
+      text-align: center;
+      margin-bottom: rem(50);
+    }
+
+    &:after {
+      display: block;
+    }
+  }
+
+  &__form {
+    display: block;
+  }
+
+  &__inputContainer {
+    display: flex;
+    @include adaptiv-value(gap, 20, 10, 1);
+  }
+
+  &__label {
+    margin-top: rem(5);
+    margin-left: rem(15);
+    display: block;
+    @media (max-width: em(620)) {
+      margin-left: 0;
+    }
+  }
+
+  &__checkbox_first {
+    align-items: start;
+  }
+  &__checkbox_second {
+    @include adaptiv-value(margin-bottom, 40, 30, 1);
+  }
+}

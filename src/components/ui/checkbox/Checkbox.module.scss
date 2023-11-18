@@ -1,0 +1,52 @@
+@import '../../../assets/styles/mixins.scss';
+
+label {
+  display: flex;
+  align-items: center;
+  @include adaptiv-value(gap, 15, 10, 1);
+}
+
+.input_checkbox {
+  display: none;
+
+  &:checked + .input_fake::before {
+    @include transition(all, 0.4s, ease, 0s);
+    opacity: 1;
+  }
+}
+
+.input_fake {
+  cursor: pointer;
+  @include adaptiv-value(min-height, 25, 15, 1);
+  @include adaptiv-value(min-width, 25, 15, 1);
+  @include adaptiv-value(max-width, 25, 15, 1);
+  @include adaptiv-value(max-height, 25, 15, 1);
+  position: relative;
+  border: rem(1.5) #898989 solid;
+  border-radius: rem(2);
+
+
+  &:before {
+    content: '';
+    position: absolute;
+    display: block;
+    @include adaptiv-value(width, 19, 12, 1);
+    @include adaptiv-value(height, 16, 8, 1);
+    background: url("../../../../public/images/icons/checked.svg") center / 100% 100% no-repeat;
+    top: 50%;
+    left: 50%;
+    @include translate(-50%, -50%);
+    opacity: 0;
+    @include transition(all, 0.4s, ease, 0s);
+  }
+}
+
+.input_text {
+  cursor: pointer;
+  display: inline-block;
+}
+
+.checkedText {
+  font-weight: 600;
+  color: #000;
+}
