@@ -33,8 +33,6 @@ $fz: 20;
     $result: math.div($px, 16) + em;
     @return $result;
 }
-//ANOTHER STYLES
-.img {position: relative; img, svg {position: absolute;top: 0;left: 0;width: 100%;height: 100%;}}
 //----------------------------------------------------------------------------------------
 @mixin adaptiv-value($property, $starSize, $minSize, $type) {
   $addSize: $starSize - $minSize;
@@ -56,3 +54,8 @@ $fz: 20;
   }
 }
 //----------------------------------------------------------------------------------------
+//GLOBAL STYLES, CLASSES
+.container {max-width: rem(1190);margin: 0 auto;@include adaptiv-value(padding-right, 40, 20, 1);@include adaptiv-value(padding-left, 40, 20, 1);@include adaptiv-value(padding-top, 80, 50, 1);}
+.img {position: relative; img, svg {position: absolute;top: 0;left: 0;width: 100%;height: 100%;}}
+.title {color: black;@include adaptiv-value(font-size, 40, 30, 1);font-family: $ff;font-weight: 600;line-height: 1.225;position: relative; &:after {display: none;content: '';position: absolute;bottom: rem(-10);left: 0;width: 100%;height: 2px;background-color: black;}}
+.form_text {font-family: $ff;@include adaptiv-value(font-size, 14, 11, 1);font-weight: 500;color: #606060;}

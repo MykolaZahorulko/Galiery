@@ -1,0 +1,36 @@
+@import '../../../assets/styles/mixins.scss';
+
+button {
+  width: 100%;
+  height: rem(50);
+  color: #000;
+  @include adaptiv-value(font-size, 20, 16, 1);
+  border-radius: rem(2);
+  @include transition(all, 0.4s, ease, 0s);
+}
+
+.fill {
+  @include transition(all, 0.4s, ease, 0s);
+  background-color: #0F0E0E;
+  color: #ffffff;
+
+  &:hover {
+    color: #000;
+    @include transition(all, 0.4s, ease, 0s);
+    background-color: #fff;
+    border: rem(1) #0F0E0E solid;
+  }
+}
+
+.unfilled {
+  @include transition(all, 0.4s, ease, 0s);
+  background-color: #fff;
+  border: rem(1) #0F0E0E solid;
+
+  &:hover {
+    @include transition(all, 0.4s, ease, 0s);
+    background-color: #0F0E0E;
+    color: #ffffff;
+  }
+
+}
