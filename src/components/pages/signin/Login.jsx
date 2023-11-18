@@ -1,10 +1,10 @@
 import React from 'react'
-import styles from './Signin.module.scss'
+import styles from './Login.module.scss'
 import Input from "../../ui/input/Input.jsx";
 import {Link} from "react-router-dom";
 import Button from "../../ui/button/Button.jsx";
 
-const Signin = () => {
+const Login = () => {
 
     return (
         <section className={styles.signin}>
@@ -15,10 +15,12 @@ const Signin = () => {
                         запис?</label>
                     <div className={styles.signin__inputContainer}>
                         <Input
+                            tabIndex={1}
                             type={"text"}
                             placeholder={"*Адреса електронної пошти"}
                         />
                         <Input
+                            tabIndex={2}
                             type={"password"}
                             placeholder={"*Пароль"}
                         />
@@ -31,9 +33,9 @@ const Signin = () => {
                 </form>
                 <div className={`${styles.signin__isProfile_text} ${styles.form_text}`}>Ще немає облікового запису?
                 </div>
-                <Button isFill={true}>Зареєструватися</Button>
+                <Link to={"/register"} ><Button isFill={true}>Зареєструватися</Button></Link>
             </div>
         </section>
     )
 }
-export default Signin
+export default Login
