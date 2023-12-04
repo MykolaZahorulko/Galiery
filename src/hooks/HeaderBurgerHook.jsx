@@ -1,15 +1,20 @@
 import {useEffect} from "react";
 import {useDispatch, useSelector} from "react-redux";
 import {toggleBurgerMenu} from "../actions/toggleBurgerMenu.js";
+import useWindowResize from "./useWindowResize.jsx";
 
 const useHeaderBurger = (menuBurgerRef) => {
     const isBurgerOpen = useSelector((state) => state.burger.isBurgerOpen);
     const dispatch = useDispatch();
+    const windowWidth = useWindowResize();
 
     useEffect(() => {
+
         if (!isBurgerOpen) return;
 
-        document.body.style.overflow = isBurgerOpen ? 'hidden' : 'auto';
+        const originalOverflow = document.body.style.overflow;
+
+        document.body.style.overflow = 'hidden';
 
         const handleClick = (e) => {
             if (!menuBurgerRef.current) return;
@@ -21,12 +26,12 @@ const useHeaderBurger = (menuBurgerRef) => {
         document.addEventListener('click', handleClick);
 
         return () => {
-            document.body.style.overflow = 'auto';
+            document.body.style.overflow = originalOverflow;
             document.removeEventListener('click', handleClick);
         };
-    }, [isBurgerOpen, dispatch])
+    }, [isBurgerOpen, dispatch]);
 
-    return isBurgerOpen
+    return isBurgerOpen;
 }
 
 export default useHeaderBurger

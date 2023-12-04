@@ -528,7 +528,7 @@ $width-mobile-value: calc(100% + 30px + 20px);
       display: block;
     }
     display: none;
-    overflow: hidden;
+    overflow-y: clip;
     background-color: #0F0E0E;
     padding-top: rem(100);
     padding-bottom: rem(60);
@@ -581,18 +581,18 @@ $width-mobile-value: calc(100% + 30px + 20px);
 
 @keyframes scrollMobileAnimation {
   0% {
-    @include translate(0, -200%);
+    @include translate(50%, -200%);
   }
   100% {
-    @include translate(0, -100%);
+    @include translate(50%, -100%);
   }
 }
 
 @keyframes scrollMobileAnimation1 {
   0% {
-    @include translate(0, -100%);
+    @include translate(50%, -100%);
   }
   100% {
-    @include translate(0, 0);
+    @include translate(50%, 0);
   }
 }

@@ -17,15 +17,15 @@
 $maxWidth: 1600;/* --- Here we are write enter layout width {ALL} without PX --- */
 $maxWidthContainer: 1110;/* --- Here we are enter container width without PX --- */
 $ff: 'Montserrat', sans-serif;
-$fz: 20;
+$fz: 16;
 // TO%
 @function prc($pxOne, $pxTwo) {
-    $result: math.div($pxOne, $pxTwo) * 100%;
+    $result: calc($pxOne / $pxTwo) * 100%;
     @return $result;
 }
 //REM
 @function rem($px) {
-    $result: math.div($px, $fz) + rem;
+    $result: math.div($px, 20) + rem;
     @return $result;
 }
 //EM
@@ -60,3 +60,6 @@ $fz: 20;
 .title {color: black;@include adaptiv-value(font-size, 40, 30, 1);font-family: $ff;font-weight: 600;line-height: 1.225;position: relative; &:after {display: none;content: '';position: absolute;bottom: rem(-10);left: 0;width: 100%;height: 2px;background-color: black;}}
 .label_text {font-family: $ff;@include adaptiv-value(font-size, 14, 11, 1);font-weight: 500;color: #606060;}
 .input_margin {@include adaptiv-value(margin-bottom, 30, 20, 1);}
+._anim_items {display: inherit;}
+._anim_no_hide {display: inherit;}
+._anim_active {display: inherit;}

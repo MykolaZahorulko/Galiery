@@ -1,1 +1,13 @@
 @import '../../../assets/styles/mixins.scss';
+
+._dynamic_adapt_ {
+  display: inherit;
+}
+
+.preview {
+  background-color: red;
+}
+
+.targetContainer {
+  background-color: green;
+}

@@ -7,6 +7,10 @@
 }
 .main {
 	flex: 1 1 auto;
+	padding-top: rem(100);
+	@media (max-width: em(768)) {
+		padding-top: rem(116);
+	}
 }
 
 .title {

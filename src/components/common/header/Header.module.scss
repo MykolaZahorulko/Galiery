@@ -6,17 +6,18 @@
   left: 0;
   width: 100%;
   z-index: 20;
-  @include adaptiv-value(padding-top, 40, 60, 1);
   padding-bottom: rem(20);
+  padding-top: rem(40);
   @media (max-width: em(768)) {
     padding-bottom: 0;
   }
   display: block;
-  background-color: #000;
+  background-color: #0F0E0E;
   color: #ffffff;
 
   &__container {
     padding-top: 0;
+    padding-bottom: 0;
     display: block;
   }
 
@@ -24,6 +25,8 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    max-height: rem(40);
+    min-height: rem(40);
     @media (max-width: em(768)) {
       justify-content: start;
     }
@@ -112,6 +115,7 @@
   &__menu {
     z-index: 20;
     @media (max-width: em(768)) {
+      top: rem(116);
       overflow: auto;
       padding-bottom: rem(150);
       max-height: rem(845);
@@ -141,6 +145,16 @@
         font-weight: 600;
         margin-left: rem(40);
         @include transition(all, 0.3s, ease, 0s);
+        @media (max-width: em(1024)) {
+          margin-left: rem(20);
+          font-size: rem(18);
+          &:first-child {
+            margin-left: rem(5);
+          }
+        }
+        @media (max-width: em(860)) {
+          font-size: rem(16);
+        }
         @media (min-width: em(768)) {
           &:hover {
             @include transition(all, 0.3s, ease, 0s);
@@ -166,22 +180,17 @@
           }
         }
 
-        @media (max-width: em(1024)) {
-          margin-left: rem(20);
-          font-size: rem(18);
-          &:first-child {
-            margin-left: rem(5);
-          }
-        }
-        @media (max-width: em(860)) {
-          font-size: rem(16);
-        }
         @media (max-width: em(768)) {
-          @include adaptiv-value(padding-left, 40, 20, 1);
+          .menu__link {
+            @include adaptiv-value(padding-left, 40, 20, 1);
+            padding-top: rem(30);
+            padding-bottom: rem(20);
+            &:first-child {
+              flex: 1 1 auto;
+            }
+          }
           margin: 0;
           font-size: rem(18);
-          padding-top: rem(30);
-          padding-bottom: rem(20);
           &:last-child {
             display: block;
 
@@ -197,7 +206,7 @@
           &:first-child {
             margin-left: 0;
             display: flex;
-            justify-content: space-between;
+            align-items: center;
             padding-right: rem(20);
 
             span {
@@ -205,6 +214,10 @@
             }
           }
         }
+      }
+
+      .menu__link {
+        display: block;
       }
     }
   }

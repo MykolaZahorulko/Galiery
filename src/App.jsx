@@ -15,17 +15,17 @@ const App = () => {
     return (
         <Router>
             <Layout>
-                <Routes>
-                    <Route path="/" element={<Home />}></Route>
-                    <Route path="/preview" element={<Preview />}></Route>
-                    <Route path="/subscription" element={<Subscription />}></Route>
-                    <Route path="/contacts" element={<Contacts />}></Route>
-                    <Route path="/login" element={<Login />}></Route>
-                    <Route path="/faq" element={<Faq />}></Route>
-                    <Route path="/cart" element={<Cart />}></Route>
-                    <Route path="/register" element={<Register />}></Route>
-                    {/*<Route path="/admin" component={AdminPanel}/>*/}
-                </Routes>
+                    <Routes>
+                        <Route path="/" element={<Home/>}></Route>
+                        <Route path="/preview" element={<Preview/>}></Route>
+                        <Route path="/subscription" element={<Subscription/>}></Route>
+                        <Route path="/contacts" element={<Contacts/>}></Route>
+                        <Route path="/login" element={<Login/>}></Route>
+                        <Route path="/faq" element={<Faq/>}></Route>
+                        <Route path="/cart" element={<Cart/>}></Route>
+                        <Route path="/register" element={<Register/>}></Route>
+                        {/*<Route path="/admin" component={AdminPanel}/>*/}
+                    </Routes>
             </Layout>
         </Router>
     );

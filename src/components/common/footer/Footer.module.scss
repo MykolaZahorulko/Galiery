@@ -1,1 +1,122 @@
 @import '../../../assets/styles/mixins.scss';
+
+.footer {
+  background-color: green;
+  position: relative;
+
+  &__backgraund {
+    z-index: 0;
+    @include objf(cover);
+    top: 0;
+    left: 0;
+    position: absolute;
+    width: 100%;
+    max-width: 100%;
+    height: 100%;
+  }
+
+  &__container {
+    @include adaptiv-value(padding-top, 80, 60, 1);
+    @include adaptiv-value(padding-bottom, 60, 100, 1);
+  }
+
+  &__body {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: rem(35);
+    @media (max-width: em(995)) {
+      justify-content: start;
+      @include adaptiv-value(gap, 100, 60, 1);
+    }
+  }
+
+  &__item {
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    color: #fff;
+    text-transform: uppercase;
+    @include adaptiv-value(max-width, 340, 320, 1);
+
+    &_title {
+      @include adaptiv-value(font-size, 24, 18, 1);
+      font-weight: 700;
+      @include adaptiv-value(margin-bottom, 40, 30, 1);
+    }
+
+    &_input {
+      position: relative;
+
+      input {
+        height: rem(65);
+        border-radius: rem(2);
+        outline: none;
+        padding-right: rem(80);
+
+        &::placeholder {
+          font-size: rem(16);
+        }
+
+        &:focus {
+          @include scale(1.02);
+          outline: none;
+        }
+      }
+
+    }
+
+    p {
+      @include transition(all, 0.4s, ease, 0s);
+      @include adaptiv-value(font-size, 16, 14, 1);
+      @include adaptiv-value(margin-top, 20, 15, 1);
+      color: #BABABA;
+      text-transform: capitalize;
+      visibility: hidden;
+      opacity: 0;
+      @include translate(0, -20%);
+      @include transition(all, 1s, ease, 0s);
+
+      &._active {
+        @include translate(0, 0);
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+
+    &_inputStringIcon {
+      position: absolute;
+      right: rem(25);
+      top: 50%;
+      @include translate(0, -50%);
+      width: rem(40);
+      height: rem(15);
+      cursor: pointer;
+    }
+
+    &_inputCheckIcon {
+      position: absolute;
+      right: rem(25);
+      top: 50%;
+      @include translate(0, -50%);
+      height: rem(30);
+      width: rem(30);
+    }
+
+    &_link {
+      display: flex;
+      align-items: center;
+      @include adaptiv-value(gap, 10, 5, 1);
+      @include adaptiv-value(font-size, 16, 14, 1);
+
+      &:not(:last-child) {
+        @include adaptiv-value(margin-bottom, 20, 15, 1);
+      }
+    }
+
+    &_linkIcon {
+      @include adaptiv-value(width, 24, 20, 1);
+      @include adaptiv-value(height, 24, 20, 1);
+    }
+  }
+}
