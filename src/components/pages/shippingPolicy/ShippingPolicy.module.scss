@@ -1,0 +1,34 @@
+@import '../../../assets/styles/mixins.scss';
+
+.shipping {
+  display: inherit;
+
+  &__container {
+    display: inherit;
+  }
+
+  &__title {
+    @include adaptiv-value(margin-bottom, 55, 30, 1);
+  }
+
+  &__text {
+    display: inherit;
+  }
+
+  &__paragraph {
+    @include adaptiv-value(margin-bottom, 40, 20, 1);
+     &:nth-child(3) {
+        @include adaptiv-value(margin-bottom, 10, 5, 1);
+    }
+    span {
+      font-weight: 700;
+    }
+  }
+
+  &__mainParagraph {
+    @include adaptiv-value(font-size, 22, 18, 1);
+    font-weight: 700;
+    @include adaptiv-value(margin-bottom, 25, 15, 1);
+  }
+
+}

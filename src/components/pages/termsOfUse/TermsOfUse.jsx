@@ -352,20 +352,6 @@ const TermsOfUse = () => {
             Сторін в порядку, передбаченому чинним законодавством України.
           </p>
 
-          <p
-            className={`${styles.terms__paragraph} ${styles.terms__mainParagraph}`}
-          >
-            Дані Продавця:
-          </p>
-
-          <p className={styles.terms__paragraph}>
-            Фізична особа-підприємець Горбатенко Микола Григорович
-          </p>
-
-          <p className={styles.terms__paragraph}>
-            ЄДРПОУ 2105618911, юридична адреса: Україна, 08200, Київська
-            область, Бучанський район, м. Ірпінь, Буд 26-В
-          </p>
         </div>
       </div>
     </section>
