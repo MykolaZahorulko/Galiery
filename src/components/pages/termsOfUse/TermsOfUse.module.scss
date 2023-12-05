@@ -1,0 +1,25 @@
+@import '../../../assets/styles/mixins.scss';
+
+.terms {
+  display: inherit;
+
+  &__container {
+    display: inherit;
+  }
+
+  &__title {
+    @include adaptiv-value(margin-bottom, 55, 30, 1);
+  }
+
+  &__text {
+    display: inherit;
+  }
+
+  &__paragraph {
+    @include adaptiv-value(margin-bottom, 40, 20, 1);
+  }
+
+  &__mainParagraph {
+    font-weight: 700;
+  }
+}

@@ -9,7 +9,7 @@ import Faq from "./components/pages/faq/Faq.jsx";
 import Login from "./components/pages/login/Login.jsx";
 import Cart from "./components/pages/cart/Cart.jsx";
 import Register from "./components/pages/register/Register.jsx";
-// import AdminPanel from './components/AdminPanel';
+import TermsOfUse from "./components/pages/termsOfUse/TermsOfUse.jsx";
 
 const App = () => {
     return (
@@ -23,8 +23,8 @@ const App = () => {
                         <Route path="/login" element={<Login/>}></Route>
                         <Route path="/faq" element={<Faq/>}></Route>
                         <Route path="/cart" element={<Cart/>}></Route>
-                        <Route path="/register" element={<Register/>}></Route>
-                        {/*<Route path="/admin" component={AdminPanel}/>*/}
+                        <Route path="/register" element={<Register/>}> </Route>
+                        <Route path="/terms-of-use" element={<TermsOfUse/>}></Route>
                     </Routes>
             </Layout>
         </Router>

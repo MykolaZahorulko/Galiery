@@ -1,7 +1,6 @@
 @import '../../../assets/styles/mixins.scss';
 
 .footer {
-  background-color: green;
   position: relative;
 
   &__backgraund {
@@ -36,10 +35,10 @@
     display: flex;
     flex-direction: column;
     color: #fff;
-    text-transform: uppercase;
     @include adaptiv-value(max-width, 340, 320, 1);
 
     &_title {
+      text-transform: uppercase;
       @include adaptiv-value(font-size, 24, 18, 1);
       font-weight: 700;
       @include adaptiv-value(margin-bottom, 40, 30, 1);
@@ -71,7 +70,6 @@
       @include adaptiv-value(font-size, 16, 14, 1);
       @include adaptiv-value(margin-top, 20, 15, 1);
       color: #BABABA;
-      text-transform: capitalize;
       visibility: hidden;
       opacity: 0;
       @include translate(0, -20%);
@@ -104,19 +102,41 @@
     }
 
     &_link {
-      display: flex;
-      align-items: center;
-      @include adaptiv-value(gap, 10, 5, 1);
       @include adaptiv-value(font-size, 16, 14, 1);
+      display: flex;
 
       &:not(:last-child) {
         @include adaptiv-value(margin-bottom, 20, 15, 1);
+      }
+
+      a {
+        display: flex;
+        align-items: center;
+        @include adaptiv-value(gap, 10, 5, 1);
+        @include transition(all, 0.3s, ease, 0s);
+
+        &:hover {
+          @include transition(all, 0.3s, ease, 0s);
+          color: #D30303;
+
+          svg {
+            path {
+              fill: #D30303;
+            }
+          }
+        }
       }
     }
 
     &_linkIcon {
       @include adaptiv-value(width, 24, 20, 1);
       @include adaptiv-value(height, 24, 20, 1);
+
+      svg {
+        path {
+          @include transition(all, 0.3s, ease, 0s);
+        }
+      }
     }
   }
 }
