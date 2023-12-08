@@ -18,6 +18,9 @@ const Faq = () => {
                         <div key={index} className={`${styles.faq__item} ${openIndex === index ? styles.open : ''}`}>
                             <div className={styles.faq__item_title} onClick={() => handleClick(index)}>
                                 {item.title}
+                                <div className={`${styles.faq__item_icon} ${styles.img}`}>
+                                    <svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg"><line y1="-1" x2="20" y2="-1" transform="matrix(0 -1 0.99995 -0.00999686 11 20)" stroke="#4A4A4A" stroke-width="2"/><line y1="-1" x2="20" y2="-1" transform="matrix(1 0 -0.00999685 0.99995 0.0107422 10.5116)" stroke="#4A4A4A" stroke-width="2"/></svg>
+                                </div>
                             </div>
                             {openIndex === index ? (
                                     <div

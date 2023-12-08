@@ -18,16 +18,30 @@
       @include adaptiv-value(font-size, 20, 16, 1);
       font-weight: 600;
       z-index: 2;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      cursor: pointer;
+    }
+
+    &_icon {
+      @include transition(all, 0.3s, ease, 0s);
+      @include adaptiv-value(min-width, 20, 16, 1);
+      @include adaptiv-value(min-height, 20, 16, 1);
+      margin-left: 15%;
     }
 
     &_content {
       @include adaptiv-value(font-size, 18, 14, 1);
       @include adaptiv-value(margin-top, 25, 10, 1);
-      animation: item_visible 0.6s;
+      animation: item_visible 0.5s ease 0s;
     }
 
     &.open {
-      display: inherit;
+      @include transition(all, 0.5s, ease, 0s);
+      .faq__item_icon {
+        @include rotate(45deg);
+      }
     }
 
     &:after {
@@ -35,13 +49,13 @@
       display: block;
       width: 100%;
       min-width: 100%;
-      background-color: red;
-      min-height: rem(2);
-      @include adaptiv-value(margin-top, 20, 10, 1);
+      background-color: #D30303;
+      min-height: rem(1);
+      @include adaptiv-value(margin-top, 20, 15, 1);
     }
 
     &:not(:last-child) {
-      @include adaptiv-value(margin-bottom, 20, 10, 1);
+      @include adaptiv-value(margin-bottom, 40, 20, 1);
     }
   }
 }
