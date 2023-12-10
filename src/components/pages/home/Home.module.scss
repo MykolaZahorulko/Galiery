@@ -564,15 +564,15 @@
   &__mobile_styleElement1 {
     z-index: 3;
     position: absolute;
-    right: 0;
-    animation: scrollMobileAnimation 10s linear infinite;
+    right: rem(-40);
+    animation: scrollAnimation 10s linear infinite;
   }
 
   &__mobile_styleElement2 {
     z-index: 3;
     position: absolute;
-    right: 0;
-    animation: scrollMobileAnimation1 10s linear infinite;
+    right: rem(-40);
+    animation: scrollAnimation1 10s linear infinite;
   }
 }
 
@@ -591,23 +591,5 @@
   }
   100% {
     top: 0;
-  }
-}
-
-@keyframes scrollMobileAnimation {
-  0% {
-    @include translate(50%, -200%);
-  }
-  100% {
-    @include translate(50%, -100%);
-  }
-}
-
-@keyframes scrollMobileAnimation1 {
-  0% {
-    @include translate(50%, -100%);
-  }
-  100% {
-    @include translate(50%, 0);
   }
 }

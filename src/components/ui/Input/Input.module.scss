@@ -3,7 +3,7 @@
 input {
   width: 100%;
   background-color: #fff;
-  outline: rem(1.5) #898989 solid;
+  outline: #898989 rem(1.5) solid;
   border-radius: rem(2);
   padding-left: rem(15);
   padding-right: rem(15);
@@ -17,7 +17,7 @@ input {
 
   &:focus {
     @include transition(all, 0.4s, ease, 0s);
-    outline: rem(1.5) #767676 solid;
+    outline: #767676 rem(1.5) solid;
     box-shadow: rem(3) rem(3) rem(6) rgba(0, 0, 0, 0.2);
   }
 }
