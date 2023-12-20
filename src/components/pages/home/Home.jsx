@@ -4,6 +4,7 @@ import styles from "./Home.module.scss";
 import useScrollAnimation from "../../utils/useScrollAnimation.jsx";
 import { Link } from "react-router-dom";
 import useWindowResize from "../../../hooks/useWindowResize.jsx";
+import Preview from "../preview/Preview.jsx";
 
 const Home = () => {
   const windowWidth = useWindowResize();
@@ -207,6 +208,7 @@ const Home = () => {
           </div>
         </div>
       </section>
+      <Preview />
     </div>
   );
 };

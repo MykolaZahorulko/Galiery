@@ -12,6 +12,7 @@ import Register from "./components/pages/register/Register.jsx";
 import TermsOfUse from "./components/pages/termsOfUse/TermsOfUse.jsx";
 import { useLocation } from 'react-router-dom';
 import ShippingPolicy from "./components/pages/shippingPolicy/ShippingPolicy.jsx";
+import ShoeBuy from "./components/pages/shoeBuy/ShoeBuy.jsx";
 
 const ScrollToTop = () => {
   const { pathname } = useLocation();
@@ -29,6 +30,7 @@ const App = () => {
                 <ScrollToTop />
                     <Routes>
                         <Route path="/" element={<Home/>}></Route>
+                        <Route path="/:article" element={<ShoeBuy />} />
                         <Route path="/preview" element={<Preview/>}></Route>
                         <Route path="/subscription" element={<Subscription/>}></Route>
                         <Route path="/contacts" element={<Contacts/>}></Route>
