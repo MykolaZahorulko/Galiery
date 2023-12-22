@@ -1,1 +1,69 @@
 @import '../../../assets/styles/mixins.scss';
+
+.shoe {
+  &__container {
+    display: inherit;
+  }
+
+  &__body {
+    display: flex;
+    justify-content: space-between;
+    gap: rem(20);
+    align-items: center;
+    @media (max-width: em(768)) {
+      flex-direction: column;
+      align-items: start;
+    }
+  }
+
+  &__content {
+    flex: 0 0 prc(273, 1110);
+    min-width: rem(273);
+    @media (max-width: em(992)) {
+      min-width: rem(247);
+    }
+    @media (max-width: em(768)) {
+      min-width: 0;
+      width: 100%;
+    }
+  }
+
+  &__name {
+    font-weight: 600;
+    white-space: nowrap;
+    @include adaptiv-value(font-size, 20, 16, 1);
+    @include adaptiv-value(margin-bottom, 16, 10, 1);
+    @media (max-width: em(768)) {
+      white-space: pre-wrap;
+      display: flex;
+      p {
+        max-width: rem(163);
+      }
+      align-items: center;
+      justify-content: space-between;
+    }
+  }
+
+  &__pdv {
+    @include adaptiv-value(font-size, 16, 14, 1);
+    @include adaptiv-value(margin-bottom, 20, 30, 1);
+    color: #6F6F6F;
+  }
+
+  &__select {
+    margin-bottom: rem(20);
+  }
+
+  &__button {
+    @include adaptiv-value(margin-bottom, 40, 30, 1);
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    gap: rem(20);
+    @include adaptiv-value(font-size, 16, 14, 1);
+  }
+
+
+}

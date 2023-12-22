@@ -1,5 +1,5 @@
 import React, {useEffect} from 'react';
-import {BrowserRouter as Router, Route, Routes} from 'react-router-dom';
+import {BrowserRouter as Router, Route, Routes, useLocation} from 'react-router-dom';
 import Home from './components/pages/home/Home.jsx';
 import Layout from "./layout/Layout.jsx";
 import Preview from "./components/pages/preview/Preview.jsx";
@@ -10,37 +10,38 @@ import Login from "./components/pages/login/Login.jsx";
 import Cart from "./components/pages/cart/Cart.jsx";
 import Register from "./components/pages/register/Register.jsx";
 import TermsOfUse from "./components/pages/termsOfUse/TermsOfUse.jsx";
-import { useLocation } from 'react-router-dom';
 import ShippingPolicy from "./components/pages/shippingPolicy/ShippingPolicy.jsx";
 import ShoeBuy from "./components/pages/shoeBuy/ShoeBuy.jsx";
+import PageLoadAnimation from "./components/utils/pageLoadAnimation/PageLoadAnimation.jsx";
 
 const ScrollToTop = () => {
-  const { pathname } = useLocation();
+    const {pathname} = useLocation();
 
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [pathname]);
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, [pathname]);
 
-  return null;
+    return null;
 };
 const App = () => {
     return (
         <Router>
             <Layout>
-                <ScrollToTop />
+                <PageLoadAnimation>
                     <Routes>
-                        <Route path="/" element={<Home/>}></Route>
-                        <Route path="/:article" element={<ShoeBuy />} />
-                        <Route path="/preview" element={<Preview/>}></Route>
-                        <Route path="/subscription" element={<Subscription/>}></Route>
-                        <Route path="/contacts" element={<Contacts/>}></Route>
-                        <Route path="/login" element={<Login/>}></Route>
-                        <Route path="/faq" element={<Faq/>}></Route>
-                        <Route path="/cart" element={<Cart/>}></Route>
-                        <Route path="/register" element={<Register/>}> </Route>
-                        <Route path="/terms-of-use" element={<TermsOfUse/>}></Route>
-                        <Route path="/shipping-policy" element={<ShippingPolicy/>}></Route>
+                        <Route path="/" element={<Home/>}/>
+                        <Route path="/:article" element={<ShoeBuy/>}/>
+                        <Route path="/preview" element={<Preview/>}/>
+                        <Route path="/subscription" element={<Subscription/>}/>
+                        <Route path="/contacts" element={<Contacts/>}/>
+                        <Route path="/login" element={<Login/>}/>
+                        <Route path="/faq" element={<Faq/>}/>
+                        <Route path="/cart" element={<Cart/>}/>
+                        <Route path="/register" element={<Register/>}/>
+                        <Route path="/terms-of-use" element={<TermsOfUse/>}/>
+                        <Route path="/shipping-policy" element={<ShippingPolicy/>}/>
                     </Routes>
+                </PageLoadAnimation>
             </Layout>
         </Router>
     );

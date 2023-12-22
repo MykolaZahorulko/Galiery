@@ -1,0 +1,21 @@
+@import '../../../assets/styles/mixins.scss';
+
+.swiper-pagination {
+  display: flex;
+  justify-content: center;
+  @include adaptiv-value(gap, 10, 5, 1);
+}
+
+.swiper-pagination-bullet {
+  @include adaptiv-value(width, 35, 20, 1);
+  @include adaptiv-value(min-height, 2.5, 1.5, 1);
+  display: inline-block;
+  background: #000;
+  opacity: 0.2;
+  cursor: pointer;
+
+  &-active {
+    opacity: 1;
+    background: #000;
+  }
+}
