@@ -12,7 +12,7 @@ const shoes = [
     {
         article: 'DX4356-600',
         name: 'Nike Dunk Low Plum Eclipse',
-        sizes: ['34', '36', '49', '41', '42', '44'],
+        sizes: ['34', '36', '41', '42', '44', '49'],
         color: 'коричневий/білий',
         price: '120€',
         isSoon: true,

@@ -8,7 +8,7 @@ import useWindowResize from "../../../hooks/useWindowResize.jsx";
 
 const Header = () => {
   const menuBurgerRef = useRef(null);
-  const isBurgerOpen = useHeaderBurger(menuBurgerRef);
+  const isBurgerOpen = useHeaderBurger(menuBurgerRef)
   const dispatch = useDispatch();
   const windowWidth = useWindowResize();
   const isWindowWidthOk = windowWidth <= 768;
@@ -21,7 +21,7 @@ const Header = () => {
             className={styles.header__burger}
             onClick={(e) => {
               e.stopPropagation();
-              dispatch(toggleBurgerMenu());
+              dispatch(toggleBurgerMenu())
             }}
           >
             <span></span>

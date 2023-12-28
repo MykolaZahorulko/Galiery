@@ -8,7 +8,7 @@ const Preview = () => {
         <section className={styles.preview}>
             <div className={`${styles.preview__container} ${styles.container}`}>
                 <div className={styles.preview__body}>
-                    <h2 className={`${styles.preview__title} ${styles.title}`}>Передогляд тижня №1</h2>
+                    <h2 className={`${styles.preview__title} ${styles.title}`}>Тиждень №1</h2>
                     <div className={styles.preview__text}>
                         <p>Цього тижня ви побачите...</p>
                         <p>Пам’ятайте, що участь у дропі можлива тільки користувачам, які оформили підписку.</p>

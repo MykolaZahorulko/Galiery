@@ -7,4 +7,4 @@ const windowWidthReducer = (state = window.innerWidth, action) => {
   }
 };
 
-export default windowWidthReducer;8
+export default windowWidthReducer;

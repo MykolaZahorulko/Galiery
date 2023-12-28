@@ -1,12 +1,10 @@
 import {useEffect} from "react";
 import {useDispatch, useSelector} from "react-redux";
 import {toggleBurgerMenu} from "../actions/toggleBurgerMenu.js";
-import useWindowResize from "./useWindowResize.jsx";
 
 const useHeaderBurger = (menuBurgerRef) => {
     const isBurgerOpen = useSelector((state) => state.burger.isBurgerOpen);
     const dispatch = useDispatch();
-    const windowWidth = useWindowResize();
 
     useEffect(() => {
 
