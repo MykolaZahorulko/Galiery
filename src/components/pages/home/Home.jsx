@@ -31,7 +31,7 @@ const Home = () => {
                             <p className={styles.retail__text}>
                                 {t('home.retailText')}
                             </p>
-                            <Link to={"/subscription"}>
+                            <Link to={"/Galiery/subscription"}>
                                 <Button className={styles.retail__button}>
                                     {t('home.subscribe')}
                                 </Button>
@@ -127,7 +127,7 @@ const Home = () => {
                         </h2>
                         <p className={styles.details__text}>
                             {t('home.subscribeInterest')}
-                            <Link to="subscription">{t('home.ourSubscribe')}</Link>
+                            <Link to="/Galiery/subscription">{t('home.ourSubscribe')}</Link>
                             {t('home.exclusiveClothes')}
                         </p>
                         <div className={styles.details__mobile_image_part}>
@@ -157,7 +157,7 @@ const Home = () => {
                                 </p>
                                 <hr className={styles.details__separator}/>
                                 <div>
-                                    {t('home.seeInInst')}<Link to="/contacts">{t('home.contacts')}</Link>
+                                    {t('home.seeInInst')}<Link to="/Galiery/contacts">{t('home.contacts')}</Link>
                                 </div>
                             </div>
                             <div className={styles.details__imagesAndText_images}>

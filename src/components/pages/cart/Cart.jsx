@@ -75,7 +75,7 @@ const Cart = () => {
                             </div>
                         </div>
                     )}
-                    <Link to='/preview'>
+                    <Link to='/Galiery/preview'>
                         <Button isFill={true}>{t('cart.continueShopping')}</Button>
                     </Link>
                 </div>
