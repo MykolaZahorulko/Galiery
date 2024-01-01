@@ -1,46 +1,26 @@
-import React, {useState} from 'react'
-import {useParams} from "react-router-dom";
-import shoes from "../../../services/shoesServices.js";
+import React from "react";
 import styles from './ShoeBuy.module.scss'
 import Select from "../../ui/select/Select.jsx";
 import Button from "../../ui/button/Button.jsx";
 import Slider from "../../utils/slider/Slider.jsx";
-import {useDispatch} from "react-redux";
-import {addShoeToCart} from "../../../actions/cartAction.js";
-
+import {useShoeBuy} from "../../../hooks/shoeBuyHook.jsx";
+import {useParams} from "react-router-dom";
+import {useTranslation} from "react-i18next";
+import '../../../i18n'
+import i18next from "i18next";
 const ShoeBuy = () => {
+    const {t} =useTranslation()
     const {article} = useParams()
-    const [isShoeInCart, setIsShoeInCart] = useState(false)
-    const [selectedValue, setSelectedValue] = useState('')
-    const shoe = shoes.find(shoe => shoe.article === article)
-    const dispatch = useDispatch()
+    const warningMessage = t('shoeBuy.firstSelectSize')
+    let currentLng = i18next.language
 
-    if (!shoe) {
-        return <div>Товар не знайдено</div>
-    }
-
-    const handleSelectChange = (event) => {
-        const value = event.target.value
-        setSelectedValue(value)
-    };
-
-    const addingInCart = () => {
-        if (!selectedValue) {
-            alert('Спочатку треба вибрати розмір.')
-        } else {
-            const updatedShoe = {
-                ...shoe,
-                sizes: [selectedValue],
-            }
-
-            dispatch(addShoeToCart(updatedShoe))
-
-            setIsShoeInCart(true);
-            setTimeout(() => {
-                setIsShoeInCart(false);
-            }, 3000);
-        }
-    };
+    const {
+        isShoeInCart,
+        selectedValue,
+        shoe,
+        handleSelectChange,
+        addingInCart
+    } = useShoeBuy(article, warningMessage)
 
     return (
         <div className={styles.shoe}>
@@ -52,21 +32,21 @@ const ShoeBuy = () => {
                             <p>{shoe.name}</p>
                             <div>{shoe.price}</div>
                         </h3>
-                        <p className={styles.shoe__pdv}>Податки та збори не включені.</p>
+                        <p className={styles.shoe__pdv}>{t('shoeBuy.pdv')}</p>
                         <Select
                             value={selectedValue}
                             onChange={handleSelectChange}
                             name="sizes select"
                             options={shoe.sizes}
-                            defaultValue="Обрати розмір"
+                            defaultValue={t('shoeBuy.selectSize')}
                             className={styles.shoe__select}
                         />
                         <Button isFill={true} className={styles.shoe__button} onClick={() => addingInCart()}>
-                            {isShoeInCart ? 'Товар додано :)' : 'Додати до кошика'}
+                            {isShoeInCart ? t('shoeBuy.itemAdded') : t('shoeBuy.addToCart')}
                         </Button>
                         <div className={styles.shoe__info}>
-                            <p>Колір: {shoe.color}</p>
-                            <p>Колір: {shoe.article}</p>
+                            <p>{t('shoeBuy.color')}{currentLng === 'en' ? shoe.color.en : shoe.color.uk}</p>
+                            <p>{t('shoeBuy.article')}{shoe.article}</p>
                         </div>
                     </div>
                 </div>

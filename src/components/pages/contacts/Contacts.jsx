@@ -1,7 +1,9 @@
 import React from "react";
 import styles from "./Contacts.module.scss";
-
+import {useTranslation} from "react-i18next";
+import '../../../i18n'
 const Contacts = () => {
+    const { t } = useTranslation()
     return (
         <div className={styles.contacts}>
             <section className={styles.contact}>
@@ -14,34 +16,34 @@ const Contacts = () => {
                             <div className={styles.contact__messageArea_area}>
                                 <form className={styles.contact__form}>
                                     <label htmlFor="title" className={styles.contact__form_title}>
-                                        Надішліть нам повідомлення
+                                        {t('contacts.sendMsg')}
                                     </label>
                                     <input
                                         type="text"
                                         name="name"
                                         tabIndex="1"
-                                        placeholder="Повне імʼя"
+                                        placeholder={t('contacts.fullName')}
                                         className={styles.contact__form_input}
                                     />
                                     <input
                                         type="tel"
                                         name="tel"
                                         tabIndex="2"
-                                        placeholder="Номер телефону"
+                                        placeholder={t('contacts.phone')}
                                         className={styles.contact__form_input}
                                     />
                                     <input
                                         type="email"
                                         name="email"
                                         tabIndex="3"
-                                        placeholder="Пошта"
+                                        placeholder={t('contacts.mail')}
                                         className={styles.contact__form_input}
                                     />
                                     <input
                                         type="text"
                                         name="help"
                                         tabIndex="4"
-                                        placeholder="Чим ми можемо Вам допомогти?"
+                                        placeholder={t('contacts.help')}
                                         className={styles.contact__form_input}
                                     />
                                     <button
@@ -50,7 +52,7 @@ const Contacts = () => {
                                         tabIndex="5"
                                         className={styles.contact__form_button}
                                     >
-                                        Надіслати
+                                        {t('contacts.send')}
                                     </button>
                                 </form>
                             </div>
@@ -60,7 +62,7 @@ const Contacts = () => {
                                 <img src="./images/contactsBackgraund.jpg" alt="shoes"/>
                             </div>
                             <div className={styles.info__item}>
-                                <h4 className={styles.info__item_title}>Контактна інформація</h4>
+                                <h4 className={styles.info__item_title}>{t('contacts.contactInfo')}</h4>
                                 <div className={styles.info__item_link}>
                                     <a href="https://www.instagram.com/galierydrop?igshid=MzRlODBiNWFlZA%3D%3D">
                                         <div
@@ -105,16 +107,16 @@ const Contacts = () => {
                                 </div>
                             </div>
                             <div className={styles.info__item}>
-                                <h4 className={styles.info__item_title}>Часи роботи</h4>
+                                <h4 className={styles.info__item_title}>{t('contacts.workTime')}</h4>
                                 <div className={styles.info__item_link}>
-                                    Пн-сб: 10:00-22:00
+                                    {t('contacts.mn-st')}: 10:00-22:00
                                 </div>
                                 <div className={styles.info__item_link}>
-                                    Нд: 10:00-18:00
+                                    {t('contacts.sn')}10:00-18:00
                                 </div>
                             </div>
                             <div className={styles.info__item}>
-                                <h4 className={styles.info__item_title}>Слідкуйте за нами</h4>
+                                <h4 className={styles.info__item_title}>{t('contacts.follow')}</h4>
                                 <div className={styles.info__item_linkList}>
                                     <a className={styles.info__item_linkList_link}
                                        href="https://www.instagram.com/galierydrop?igshid=MzRlODBiNWFlZA%3D%3D">
@@ -182,8 +184,7 @@ const Contacts = () => {
                 <div className={styles.insta__content}>
                     <div className={`${styles.insta__contianer} ${styles.container}`}>
                         <div className={styles.insta__body}>
-                            <p className={styles.insta__text1}>Також у нас є онлайн-магазин в інстаграмі, де ми продаємо
-                                одяг без підписки, який доступний будь-якому користувачеві.</p>
+                            <p className={styles.insta__text1}>{t('contacts.onlineShop')}</p>
                             <div className={styles.insta__mobileImages}>
                                 <div className={`${styles.insta__mobileImages_container} ${styles.container}`}>
                                     <div className={`${styles.insta__mobileImages_skateShmot} ${styles.img}`}>
@@ -195,9 +196,9 @@ const Contacts = () => {
                                 </div>
                             </div>
                             <div className={styles.insta__hr}></div>
-                            <p className={styles.insta__text2}>У нас дуже великий вибір речей у наявності, а також у нас
-                                є можливість замовити для Вас абсолютно будь-яку річ, абсолютно будь-якого розміру на
-                                замовлення за найприємнішою ціною та найшвидшими термінами доставки.</p>
+                            <p className={styles.insta__text2}>
+                                {t('contacts.things')}
+                            </p>
                             <div className={styles.insta__link}>
                                 <a href="https://www.instagram.com/galierydrop?igshid=MzRlODBiNWFlZA%3D%3D">
                                     <div

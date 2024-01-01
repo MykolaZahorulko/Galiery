@@ -1,0 +1,103 @@
+@import '../../../assets/styles/mixins.scss';
+
+.popap {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  left: 0;
+  z-index: 1000;
+  top: 0;
+  padding: rem(100) 0;
+  @include adaptiv-value(padding-right, 40, 20, 1);
+  @include adaptiv-value(padding-left, 40, 20, 1);
+  overflow: auto;
+  animation: fadeIn ease-in-out 0.4s;
+
+  &:before {
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #0f0e0e;
+    opacity: .3;
+  }
+
+  &__container {
+    max-width: rem(990);
+    margin: 0 auto;
+    position: relative;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    @include adaptiv-value(padding-top, 40, 20, 1);
+    @include adaptiv-value(padding-bottom, 150, 40, 1);
+    @include adaptiv-value(padding-right, 50, 30, 1);
+    @include adaptiv-value(padding-left, 50, 30, 1);
+    width: 100%;
+    height: 50vh;
+    @include adaptiv-value(min-height, 450, 350, 1);
+    @include border-radius(rem(20));
+  }
+
+  &__closer {
+    align-self: end;
+    @include adaptiv-value(margin-bottom, 60, 5, 1);
+    @include adaptiv-value(min-height, 30, 20, 1);
+    @include adaptiv-value(min-width, 30, 20, 1);
+    @include rotate(45deg);
+    cursor: pointer;
+  }
+
+  &__languages {
+    @include adaptiv-value(font-size, 20, 14, 1);
+    display: flex;
+    @include adaptiv-value(gap, 60, 30, 1);
+    flex-direction: column;
+    justify-content: center;
+    color: #000;
+    height: 100%;
+    text-align: left;
+  }
+
+  &__language {
+    @include transition(all, 0.3s, ease, 0s);
+    cursor: pointer;
+    border: 1.5px solid #000;
+    font-weight: 600;
+    @include border-radius(rem(15));
+    @include adaptiv-value(padding-top, 30, 15, 1);
+    @include adaptiv-value(padding-bottom, 30, 15, 1);
+    @include adaptiv-value(padding-right, 20, 10, 1);
+    @include adaptiv-value(padding-left, 20, 10, 1);
+
+    &.disabled {
+      @include transition(all, 0.3s, ease, 0s);
+      color: grey;
+      border: 1.5px solid grey;
+    }
+
+    &:hover {
+      @include transition(all, 0.3s, ease, 0s);
+      box-shadow: rem(3) rem(3) rem(6) rgba(0, 0, 0, 0.2);
+    }
+
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

@@ -3,8 +3,8 @@ import {useDispatch, useSelector} from "react-redux";
 import {toggleBurgerMenu} from "../actions/toggleBurgerMenu.js";
 
 const useHeaderBurger = (menuBurgerRef) => {
-    const isBurgerOpen = useSelector((state) => state.burger.isBurgerOpen);
-    const dispatch = useDispatch();
+    const isBurgerOpen = useSelector((state) => state.burger.isBurgerOpen)
+    const dispatch = useDispatch()
 
     useEffect(() => {
 
@@ -17,9 +17,9 @@ const useHeaderBurger = (menuBurgerRef) => {
         const handleClick = (e) => {
             if (!menuBurgerRef.current) return;
             if (!menuBurgerRef.current.contains(e.target)) {
-                dispatch(toggleBurgerMenu());
+                dispatch(toggleBurgerMenu())
             }
-        };
+        }
 
         document.addEventListener('click', handleClick);
 
@@ -29,7 +29,7 @@ const useHeaderBurger = (menuBurgerRef) => {
         };
     }, [isBurgerOpen, dispatch]);
 
-    return isBurgerOpen;
+    return isBurgerOpen
 }
 
 export default useHeaderBurger

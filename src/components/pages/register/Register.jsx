@@ -3,58 +3,62 @@ import styles from './Register.module.scss'
 import Input from "../../ui/Input/Input.jsx";
 import Button from "../../ui/button/Button.jsx";
 import Checkbox from "../../ui/checkbox/Сheckbox.jsx";
+import {useTranslation} from "react-i18next";
+import '../../../i18n'
 
 const Register = () => {
+    const {t} = useTranslation()
+
     return (
         <section className={styles.register}>
             <div className={`${styles.register__container} ${styles.container}`}>
-                <h2 className={`${styles.register__title} ${styles.title}`}>Зареєструватися</h2>
+                <h2 className={`${styles.register__title} ${styles.title}`}>{t('register.signUp')}</h2>
                 <form action="" className={styles.register__form}>
                     <div className={`${styles.register__inputContainer} ${styles.input_margin}`}>
                         <Input
                             tabIndex={1}
                             type={"text"}
-                            placeholder={"*Імʼя"}
+                            placeholder={t('register.name')}
                         />
                         <Input
                             tabIndex={2}
                             type={"text"}
-                            placeholder={"*Прізвище"}
+                            placeholder={t('register.secondName')}
                         />
                     </div>
                     <Input
                         className={styles.input_margin}
                         tabIndex={3}
                         type={"text"}
-                        placeholder={"*Адреса електронної пошти"}
+                        placeholder={t('register.mail')}
                     />
                     <Input
                         className={styles.input_margin}
                         tabIndex={4}
                         type={"text"}
-                        placeholder={"*Підтвердіть адресу електронної пошти"}
+                        placeholder={t('register.confirmMail')}
                     />
                     <Input
                         tabIndex={5}
                         type={"password"}
-                        placeholder={"*Пароль"}
+                        placeholder={t('register.password')}
                     />
-                    <label htmlFor="email" className={`${styles.register__label} ${styles.label_text} ${styles.input_margin}`}>Пароль має містити великі та нижні регістри, спеціальні символи та цифри</label>
+                    <label htmlFor="email" className={`${styles.register__label} ${styles.label_text} ${styles.input_margin}`}>{t('register.passwordInfo')}</label>
                     <Input
                         className={styles.input_margin}
                         tabIndex={6}
                         type={"password"}
-                        placeholder={"*Підтвердіть пароль"}
+                        placeholder={t('register.confirmPassword')}
                     />
                     <Input
                         className={styles.input_margin}
                         tabIndex={7}
                         type={"tel"}
-                        placeholder={"*Номер телефону"}
+                        placeholder={t('register.phone')}
                     />
-                    <Checkbox className={`${styles.register__checkbox_first} ${styles.input_margin}`}>Так, я хочу отримувати інформаційні листи від Galiery. Реєструючись на розсилку, я приймаю Galiery | Інформація про захист даних і даю свою згоду на збір, зберігання та обробку зазначених даних. Ви можете скасувати підписку на розсилку в будь-який час за посиланням в електронному листі або через наш зворотний зв'язок у розділі контакти.</Checkbox>
-                    <Checkbox className={styles.register__checkbox_second}>Я підтверджую, що прочитав і приймаю декларацію про захист даних.</Checkbox>
-                    <Button isFill={true}>Зареєструватися</Button>
+                    <Checkbox className={`${styles.register__checkbox_first} ${styles.input_margin}`}>{t('register.letter')}</Checkbox>
+                    <Checkbox className={styles.register__checkbox_second}>{t('register.confirm')}</Checkbox>
+                    <Button isFill={true}>{t('register.signUp')}</Button>
                 </form>
             </div>
         </section>

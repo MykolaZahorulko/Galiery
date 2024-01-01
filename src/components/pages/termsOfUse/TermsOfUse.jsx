@@ -1,357 +1,245 @@
 import React from "react";
 import styles from "./TermsOfUse.module.scss";
+import { useTranslation } from "react-i18next";
+import "../../../i18n";
 
 const TermsOfUse = () => {
+  const { t } = useTranslation();
+
   return (
     <section className={styles.terms}>
       <div className={`${styles.terms__container} ${styles.container}`}>
         <h2 className={`${styles.terms__title} ${styles.title}`}>
-          Умови використання
+          {t("termsOfUse.title")}
         </h2>
         <div className={styles.terms__text}>
+          <p className={styles.terms__paragraph}>{t("termsOfUse.agreement")}</p>
+
           <p className={styles.terms__paragraph}>
-            Даний Договір є офіційною і публічною пропозицією Продавця укласти
-            Договір купівлі-продажу Товару, представленого на сайті
-            https://galiery.com.
+            {t("termsOfUse.publicAgreement")}
           </p>
 
           <p className={styles.terms__paragraph}>
-            Цей Договір є публічним, тобто відповідно до статті 633 Цивільного
-            кодексу України його умови однакові для всіх покупців незалежно від
-            статусу (фізична особа, юридична особа, фізична особа-підприємець).
+            {t("termsOfUse.byEntering")}
           </p>
 
           <p className={styles.terms__paragraph}>
-            Шляхом укладення цього Договору Покупець в повному обсязі приймає
-            умови і порядок оформлення замовлення, оплати Товару, доставки
-            Товару та всі інші умови Договору.
+            {t("termsOfUse.readCarefully")}
           </p>
 
           <p className={styles.terms__paragraph}>
-            Будь ласка, уважно прочитайте ці Умови використання перед тим, як
-            користуватися нашим веб-сайтом.
-          </p>
-
-          <p className={styles.terms__paragraph}>
-            Договір вважається укладеним з моменту натискання кнопки «Оформити
-            замовлення» на сторінці оформлення замовлення і отримання Покупцем
-            підтвердження замовлення в електронному вигляді.
-          </p>
-          <p
-            className={`${styles.terms__paragraph} ${styles.terms__mainParagraph}`}
-          >
-            1. Терміни та визначення
-          </p>
-
-          <p className={styles.terms__paragraph}>
-            1.1. Товар - об'єкт угоди сторін, який був обраний покупцем на сайті
-            та поміщений в «Кошик» або вже придбаний Покупцем у Продавця
-            дистанційним способом.
-          </p>
-
-          <p className={styles.terms__paragraph}>
-            1.2. Інтернет-магазин - сайт Продавця за адресою
-            https://galiery.com, створений для укладення договорів роздрібної та
-            оптової купівлі-продажу на підставі ознайомлення Покупця з
-            запропонованим Продавцем описом Товару за допомогою мережі Інтернет.
-          </p>
-          <p className={styles.terms__paragraph}>
-            1.3. Покупець - дієздатна фізична особа, яка отримує інформацію від
-            продавця, розміщує замовлення з купівлі Товару, представленого на
-            сайті Інтернет-магазину для цілей, не пов'язаних із здійсненням
-            підприємницької діяльності, юридична особа або фізична
-            особа-підприємець.
-          </p>
-
-          <p className={styles.terms__paragraph}>
-            1.4. Продавець - Фізична особа-підприємець Горбатенко Микола
-            Григорович (ЄДРПОУ 2105618911), яка створена і діє відповідно до
-            чинного законодавства України.
+            {t("termsOfUse.agreementCompletion")}
           </p>
 
           <p
             className={`${styles.terms__paragraph} ${styles.terms__mainParagraph}`}
           >
-            2. Предмет Договору та порядок його укладення
+            {t("termsOfUse.termsAndDefinitions")}
           </p>
 
           <p className={styles.terms__paragraph}>
-            2.1. Продавець зобов'язується передати у власність Покупцю Товар, а
-            Покупець зобов'язується оплатити і прийняти Товар на умовах цього
-            Договору.
+            {t("termsOfUse.productDefinition")}
           </p>
 
           <p className={styles.terms__paragraph}>
-            2.2. Датою укладення Договору-оферти (акцептом оферти) і моментом
-            повного і беззастережного прийняття Покупцем умов Договору
-            вважається дата заповнення Покупцем форми замовлення, розміщеної на
-            сайті Інтернет-магазину, за умови отримання Покупцем від Продавця
-            підтвердження замовлення в електронному вигляді.
+            {t("termsOfUse.onlineStoreDefinition")}
+          </p>
+
+          <p className={styles.terms__paragraph}>
+            {t("termsOfUse.buyerDefinition")}
+          </p>
+
+          <p className={styles.terms__paragraph}>
+            {t("termsOfUse.sellerDefinition")}
           </p>
 
           <p
             className={`${styles.terms__paragraph} ${styles.terms__mainParagraph}`}
           >
-            3. Порядок оформлення замовлення
+            {t("termsOfUse.contractSubjectAndProcedure")}
           </p>
 
           <p className={styles.terms__paragraph}>
-            3.1. Покупець самостійно оформляє замовлення в Інтернет-магазині
-            через спеціальну форму «кошика».
+            {t("termsOfUse.sellerObligations")}
           </p>
 
           <p className={styles.terms__paragraph}>
-            3.2. Продавець має право відмовитися від передачі замовлення
-            Покупцеві в разі, якщо відомості, зазначені Покупцем при оформленні
-            замовлення, є неповними або викликають підозру щодо їх недійсності.
-          </p>
-
-          <p className={styles.terms__paragraph}>
-            3.3. У разі відсутності замовленого товару, Продавець зобов'язаний
-            довести до відома Покупця інформацію за допомогою засобів зв'язку,
-            залишеними Покупцем при оформленні замовлення на сайті
-            Інтернет-магазину.
-          </p>
-
-          <p className={styles.terms__paragraph}>
-            3.4. У разі відсутності замовленого товару Покупець має право
-            замінити його на інший доступний Товар або анулювати його,
-            зв'язавшись з Продавцем за допомогою одного з наданих способів
-            зв'язку.
+            {t("termsOfUse.notDiscloseInformation")}
           </p>
 
           <p
             className={`${styles.terms__paragraph} ${styles.terms__mainParagraph}`}
           >
-            4. Ціна Товару
+            {t("termsOfUse.orderingProcedure")}
           </p>
 
           <p className={styles.terms__paragraph}>
-            4.1. Ціни на Товари визначаються Продавцем самостійно і вказані на
-            сайті Інтернет-магазину. Всі ціни на Товари вказані на сайті в євро.
+            {t("termsOfUse.buyerPlacesOrder")}
           </p>
 
           <p className={styles.terms__paragraph}>
-            4.2. Ціни на Товари можуть змінюватися Продавцем в односторонньому
-            порядку в залежності від кон'юнктури ринку. При цьому ціна окремої
-            одиниці Товару, вартість якої оплачена Покупцем в повному обсязі, не
-            може бути змінена Продавцем в односторонньому порядку.
+            {t("termsOfUse.sellerCanRefuse")}
           </p>
 
           <p className={styles.terms__paragraph}>
-            4.3. Вартість доставки Товару на сайті Інтернет-магазину залежить
-            від адреси(країни) доставки вказаної Покупцем та розраховується при
-            оформленні замовлення.
+            {t("termsOfUse.inCaseOfProductAbsence")}
+          </p>
+
+          <p className={styles.terms__paragraph}>
+            {t("termsOfUse.buyerCanReplace")}
           </p>
 
           <p
             className={`${styles.terms__paragraph} ${styles.terms__mainParagraph}`}
           >
-            5. Права і обов'язки сторін
+            {t("termsOfUse.productPrice")}
           </p>
 
           <p className={styles.terms__paragraph}>
-            5.1. Продавець зобов'язується:
+            {t("termsOfUse.pricesDeterminedBySeller")}
           </p>
 
           <p className={styles.terms__paragraph}>
-            5.1.1. Передати Покупцю Товар відповідно до умов цього Договору та
-            замовленням Покупця.
+            {t("termsOfUse.pricesCanChange")}
           </p>
 
           <p className={styles.terms__paragraph}>
-            5.1.2. Не розголошувати будь-яку приватну інформацію про Покупця і
-            не надавати доступ до цієї інформації третім особам, за винятком
-            випадків, передбачених законодавством або за бажанням самого
-            Покупця.
-          </p>
-
-          <p className={styles.terms__paragraph}>5.2. Продавець має право:</p>
-
-          <p className={styles.terms__paragraph}>
-            5.2.1. Змінювати умови цього Договору, а також Тарифи (ціни) на
-            Товари та послуги в односторонньому порядку, розміщуючи їх на сайті
-            Інтернет-магазину. Всі зміни вступають в силу з моменту їх
-            публікації.
-          </p>
-
-          <p className={styles.terms__paragraph}>
-            5.3. Покупець зобов'язується:
-          </p>
-
-          <p className={styles.terms__paragraph}>
-            5.3.1. До моменту укладення Договору ознайомитися зі змістом та
-            умовами Договору, а також тарифами (цінами), пропонованими Продавцем
-            на сайті Інтернет-магазину.
-          </p>
-
-          <p className={styles.terms__paragraph}>
-            5.3.2. Для виконання Продавцем своїх зобов'язань перед Покупцем
-            останній повинен повідомити всі необхідні дані, що однозначно
-            ідентифікують його як Покупця, і достатні для доставки Покупцеві
-            замовленого Товару.
+            {t("termsOfUse.deliveryCostDependsOnAddress")}
           </p>
 
           <p
             className={`${styles.terms__paragraph} ${styles.terms__mainParagraph}`}
           >
-            6. Умови повернення Товару
+            {t("termsOfUse.rightsAndObligations")}
           </p>
 
           <p className={styles.terms__paragraph}>
-            6.1. Продавець пропонує повну гарантію повернення грошей для всіх
-            покупок, зроблених на сайті Інтернет-магазину, якщо допущені помилки
-            щодо замовленного Товару зі сторони Продавця.
+            {t("termsOfUse.sellerCommitsTo")}
           </p>
 
           <p className={styles.terms__paragraph}>
-            6.7. В усіх інших випадках Продавець не може повернути ні кошти
-            Покупцеві, ні скасувати замовлення.
+            {t("termsOfUse.sellerHasRight")}
+          </p>
+
+          <p className={styles.terms__paragraph}>
+            {t("termsOfUse.buyerAgreement")}
+          </p>
+
+          <p className={styles.terms__paragraph}>
+            {t("termsOfUse.buyerAgreementDetails1")}
+          </p>
+
+          <p className={styles.terms__paragraph}>
+            {t("termsOfUse.buyerAgreementDetails2")}
           </p>
 
           <p
             className={`${styles.terms__paragraph} ${styles.terms__mainParagraph}`}
           >
-            7. Відповідальність сторін
+            {t("termsOfUse.returnConditions")}
           </p>
 
           <p className={styles.terms__paragraph}>
-            7.1. Сторони несуть відповідальність за невиконання або неналежне
-            виконання умов цього Договору в порядку, передбаченому цим Договором
-            та чинним законодавством України.
+            {t("termsOfUse.returnGuarantee")}
+          </p>
+
+          <p className={styles.terms__paragraph}>{t("termsOfUse.noRefund")}</p>
+
+          <p
+            className={`${styles.terms__paragraph} ${styles.terms__mainParagraph}`}
+          >
+            {t("termsOfUse.responsibility")}
           </p>
 
           <p className={styles.terms__paragraph}>
-            7.2. Продавець не несе відповідальності за змінений виробником
-            зовнішній вигляд, комплектацію Товару.
+            {t("termsOfUse.responsibilityClause1")}
           </p>
 
           <p className={styles.terms__paragraph}>
-            7.3. У разі обставин непереборної сили, сторони звільняються від
-            виконання умов цього Договору. Під обставинами непереборної сили для
-            цілей цього Договору маються на увазі події, що носять надзвичайний,
-            невідворотний непередбачуваний характер, що виключають або
-            об'єктивно перешкоджають виконанню цього Договору, настання яких
-            Сторони не могли передбачити і запобігти їх розумними заходами.
+            {t("termsOfUse.responsibilityClause2")}
           </p>
 
           <p className={styles.terms__paragraph}>
-            7.4 Зазначені на Сайті умови є попередніми умовами придбання товару.
-            Умови придбання Товару можуть змінюватися Продавцем, після прийняття
-            замовлення до виконання. Конкретні умови продажу Товару Продавцем
-            можуть визначатися і змінюватися Продавцем до моменту передачі
-            Товару Покупцю.
+            {t("termsOfUse.forceMajeure")}
           </p>
 
           <p className={styles.terms__paragraph}>
-            7.5 Відповідальність продавця за зміни умов придбання Товару в
-            порівнянні з вказаними на Сайті обмежується тим, що Покупець має
-            право відмовитися від придбання Товару і вимагати у Продавця
-            повернення сплачених за нього коштів (якщо вони були фактично
-            сплачені Покупцем
+            {t("termsOfUse.forceMajeureDetails")}
+          </p>
+
+          <p className={styles.terms__paragraph}>
+            {t("termsOfUse.preliminaryConditions")}
           </p>
 
           <p
             className={`${styles.terms__paragraph} ${styles.terms__mainParagraph}`}
           >
-            8. Конфіденційність і захист персональних даних
+            {t("termsOfUse.confidentialityAndDataProtection")}
           </p>
 
           <p className={styles.terms__paragraph}>
-            8.1. Надаючи свої персональні дані на сайті Інтернет-магазину при
-            реєстрації або оформленні замовлення, Покупець дає Продавцю свою
-            добровільну згоду на обробку, використання (в тому числі передачу)
-            своїх персональних даних, а також вчинення інших дій, передбачених
-            Законом України «Про захист персональних даних» без обмеження
-            терміну дії такої згоди.
+            {t("termsOfUse.dataProcessingConsent")}
           </p>
 
           <p className={styles.terms__paragraph}>
-            8.2. Продавець зобов'язується не розголошувати отриману від Покупця
-            інформацію. Покупець надає свою згоду на передачу (поширення) його
-            даних транспортно-експедиторським і кур'єрським організаціям,
-            будь-яким Банкам і/або фінансовим установам, а також у випадках,
-            коли розкриття такої інформації встановлене вимогами чинного
-            законодавства України.
+            {t("termsOfUse.noDisclosure")}
           </p>
 
           <p className={styles.terms__paragraph}>
-            8.3. Покупець несе відповідальність за підтримання своїх
-            персональних даних в актуальному стані. Продавець не несе
-            відповідальності за неякісне виконання або невиконання своїх
-            зобов'язань у зв'язку з неактуальністю інформації про Покупця або
-            невідповідність її дійсності.
-          </p>
-          <p
-            className={`${styles.terms__paragraph} ${styles.terms__mainParagraph}`}
-          >
-            9. Інформаційні повідомлення
+            {t("termsOfUse.dataTransmission")}
           </p>
 
           <p className={styles.terms__paragraph}>
-            9.1. Реєструючись на сайті Інтернет-магазину, Покупець надає
-            Продавцю згоду на отримання інформаційних повідомлень від продавця,
-            що діють на підставі Договору з Продавцем, за допомогою служб
-            коротких повідомлень (СМС) і електронної пошти.
-          </p>
-
-          <p className={styles.terms__paragraph}>
-            9.2. У будь-який момент Покупець має право відмовитися від отримання
-            такої розсилки в розділі «Мій кабінет» на сайті Інтернет-магазину.
+            {t("termsOfUse.buyerResponsibility")}
           </p>
 
           <p
             className={`${styles.terms__paragraph} ${styles.terms__mainParagraph}`}
           >
-            10. Правила використання матеріалів, розміщених на сайті
-            Інтернет-магазину
+            {t("termsOfUse.informationNotifications")}
           </p>
 
           <p className={styles.terms__paragraph}>
-            10.1. Сайт Інтернет-магазину містить матеріали, товарні знаки,
-            фірмові найменування та інші матеріали, що охороняються законом,
-            включаючи, але без обмежень, тексти, фотографії, графічні
-            зображення, музичні та звукові твори.
+            {t("termsOfUse.informationConsent")}
           </p>
 
           <p className={styles.terms__paragraph}>
-            10.2. Весь вміст сайту Інтернет-магазину охороняється законодавством
-            України та міжнародними договорами.
-          </p>
-
-          <p className={styles.terms__paragraph}>
-            10.3. Покупець або будь-які інші треті особи не мають права
-            використовувати матеріали, розміщені на сайті Інтернет-магазину, а
-            саме: вносити зміни, копіювати, публікувати, передавати третім
-            особам і т.д.
+            {t("termsOfUse.optOutInstructions")}
           </p>
 
           <p
             className={`${styles.terms__paragraph} ${styles.terms__mainParagraph}`}
           >
-            11. Інші умови
+            {t("termsOfUse.useOfMaterials")}
           </p>
 
           <p className={styles.terms__paragraph}>
-            11.1. Цей Договір укладено на території України і діє в рамках
-            чинного законодавства України.
+            {t("termsOfUse.materialsProtection")}
           </p>
 
           <p className={styles.terms__paragraph}>
-            11.2. Всі суперечки, що виникають між Покупцем і Продавцем,
-            вирішуються шляхом переговорів. У разі недосягнення врегулювання
-            спірного питання шляхом переговорів, Покупець або Продавець має
-            право звернутися за вирішенням спору до судових органів відповідно
-            до чинного законодавства України.
+            {t("termsOfUse.contentProtection")}
+          </p>
+
+          <p className={styles.terms__paragraph}>{t("termsOfUse.noRights")}</p>
+
+          <p
+            className={`${styles.terms__paragraph} ${styles.terms__mainParagraph}`}
+          >
+            {t("termsOfUse.otherConditions")}
           </p>
 
           <p className={styles.terms__paragraph}>
-            11.3. Продавець має право вносити зміни в цей Договір в
-            односторонньому порядку, передбаченому п. 5.2.1. Договору. Крім
-            того, зміни в Договір також можуть бути внесені за взаємною згодою
-            Сторін в порядку, передбаченому чинним законодавством України.
+            {t("termsOfUse.agreementTerritory")}
           </p>
 
+          <p className={styles.terms__paragraph}>
+            {t("termsOfUse.disputeResolution")}
+          </p>
+
+          <p className={styles.terms__paragraph}>
+            {t("termsOfUse.contractChanges")}
+          </p>
         </div>
       </div>
     </section>

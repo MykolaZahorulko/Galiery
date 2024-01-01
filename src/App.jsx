@@ -14,15 +14,6 @@ import ShippingPolicy from "./components/pages/shippingPolicy/ShippingPolicy.jsx
 import ShoeBuy from "./components/pages/shoeBuy/ShoeBuy.jsx";
 import PageLoadAnimation from "./components/utils/pageLoadAnimation/PageLoadAnimation.jsx";
 
-const ScrollToTop = () => {
-    const {pathname} = useLocation();
-
-    useEffect(() => {
-        window.scrollTo(0, 0);
-    }, [pathname]);
-
-    return null;
-};
 const App = () => {
     return (
         <Router>

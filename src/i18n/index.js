@@ -1,17 +1,16 @@
 import i18n from 'i18next'
 import {initReactI18next} from 'react-i18next'
 import LanguageDetector from 'i18next-browser-languagedetector'
+import {LOCALS} from "./constants.js";
+import {UK} from './copies/UK.js'
+import {EN} from "./copies/EN.js";
 
 const resources = {
-    en: {
-        translation: {
-            'Hello': 'Hello, and Welcome to my app!'
-        }
+    [LOCALS.EN]: {
+        translation: EN
     },
-    uk: {
-        translation: {
-            'Hello': 'Привіт, і Вітаю у моєму застосунку'
-        }
+    [LOCALS.UK]: {
+        translation: UK
     }
 }
 
@@ -20,7 +19,7 @@ i18n
     .use(LanguageDetector)
     .init({
         resources,
-        fallbackLng: 'uk',
+        fallbackLng: LOCALS.UK,
 
         interpolation: {
             escapeValue: false

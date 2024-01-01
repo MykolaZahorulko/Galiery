@@ -2,10 +2,13 @@ import useWindowResize from "../../../hooks/useWindowResize.jsx";
 import React, { useState } from "react";
 import styles from "./Footer.module.scss";
 import { Link } from "react-router-dom";
+import {useTranslation} from "react-i18next";
+import '../../../i18n'
 
 const Footer = () => {
   const [isSubscribe, setIsSubscribe] = useState(false);
   const [inputValue, setInputValue] = useState("");
+  const { t } = useTranslation()
 
   function handleSubscribe() {
     if (inputValue) {
@@ -44,7 +47,7 @@ const Footer = () => {
       <div className={`${styles.footer__container} ${styles.container}`}>
         <div className={styles.footer__body}>
           <div className={styles.footer__item}>
-            <h3 className={styles.footer__item_title}>СОЦ МЕРЕЖІ</h3>
+            <h3 className={styles.footer__item_title}>{t('footer.media')}</h3>
             <div className={styles.footer__item_link}>
               <a href="https://www.instagram.com/galierydrop?igshid=MzRlODBiNWFlZA%3D%3D">
                 <div
@@ -131,34 +134,34 @@ const Footer = () => {
             </div>
           </div>
           <div className={styles.footer__item}>
-            <h3 className={styles.footer__item_title}>ПОСИЛАННЯ</h3>
+            <h3 className={styles.footer__item_title}>{t('footer.links')}</h3>
             <div className={styles.footer__item_link}>
-              <Link to="/">Головна</Link>
+              <Link to="/">{t('footer.main')}</Link>
             </div>
             <div className={styles.footer__item_link}>
               <Link to="/faq" className={styles.footer__item_link}>
-                F.A.Q.
+                {t('footer.faq')}
               </Link>
             </div>
             <div className={styles.footer__item_link}>
               <Link to="/shipping-policy" className={styles.footer__item_link}>
-                Політика доставки
+                {t('footer.shippingPolicy')}
               </Link>
             </div>
             <div className={styles.footer__item_link}>
               <Link to="/terms-of-use" className={styles.footer__item_link}>
-                Умови використання
+                {t('footer.termsOfUse')}
               </Link>
             </div>
           </div>
           <div className={styles.footer__item}>
             <h3 className={styles.footer__item_title}>
-              ПІДПИШІТЬСЯ НА НАШУ РОЗСИЛКУ
+              {t('footer.subscribeTitle')}
             </h3>
             <div className={styles.footer__item_input}>
               <input
                 type="text"
-                placeholder="Ваша пошта"
+                placeholder={t('footer.placeholder')}
                 value={inputValue}
                 onChange={(event) => setInputValue(event.target.value)}
                 onKeyDown={(e) => handleEnterKeyPress(e)}
@@ -199,8 +202,7 @@ const Footer = () => {
               )}
             </div>
             <p className={`${isSubscribe ? styles._active : ""}`}>
-              Дякуємо, що підписалися на нашу розсилку! Тепер Ви завжди
-              знатимете інформацію про всі наші новини.
+              {t('footer.subscribeThankYou')}
             </p>
           </div>
         </div>

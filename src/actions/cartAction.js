@@ -6,8 +6,8 @@ export const addShoeToCart = (shoe) => {
   };
 }
 
-export const removeFromCart = (article) => {
+export const removeFromCart = (index) => {
   return (dispatch) => {
-    dispatch(removeItem({ article }));
+    dispatch(removeItem({ index }));
   };
 };

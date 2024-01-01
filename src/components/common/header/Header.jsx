@@ -1,17 +1,21 @@
-import React, { useEffect, useRef } from "react";
+import React, {useEffect, useRef, useState} from "react";
 import styles from "./Header.module.scss";
 import { Link } from "react-router-dom";
-import { useDispatch } from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 import { toggleBurgerMenu } from "../../../actions/toggleBurgerMenu.js";
 import useHeaderBurger from "../../../hooks/HeaderBurgerHook.jsx";
 import useWindowResize from "../../../hooks/useWindowResize.jsx";
+import {toggleLanguageMenu} from "../../../actions/toggleLanguageMenu.js";
+import {useTranslation} from "react-i18next";
+import '../../../i18n'
 
 const Header = () => {
-  const menuBurgerRef = useRef(null);
+  const menuBurgerRef = useRef(null)
   const isBurgerOpen = useHeaderBurger(menuBurgerRef)
-  const dispatch = useDispatch();
-  const windowWidth = useWindowResize();
+  const dispatch = useDispatch()
+  const windowWidth = useWindowResize()
   const isWindowWidthOk = windowWidth <= 768;
+  const { t } = useTranslation();
   return (
     <header className={styles.header}>
       <div className={`${styles.header__container} ${styles.container}`}>
@@ -25,6 +29,7 @@ const Header = () => {
             }}
           >
             <span></span>
+
           </div>
           <div className={styles.header__logo}>
             <Link to="/">
@@ -51,7 +56,7 @@ const Header = () => {
                     isWindowWidthOk ? dispatch(toggleBurgerMenu(false)) : null
                   }
                 >
-                  Головна{" "}
+                  {t('header.home')}
                 </Link>
                 <span
                   onClick={() =>
@@ -80,7 +85,7 @@ const Header = () => {
                     isWindowWidthOk ? dispatch(toggleBurgerMenu(false)) : null
                   }
                 >
-                  Передогляд
+                  {t('header.preview')}
                 </Link>
               </li>
               <li className={styles.menu__item}>
@@ -91,7 +96,7 @@ const Header = () => {
                     isWindowWidthOk ? dispatch(toggleBurgerMenu(false)) : null
                   }
                 >
-                  Підписка
+                  {t('header.subscription')}
                 </Link>
               </li>
               <li className={styles.menu__item}>
@@ -102,7 +107,7 @@ const Header = () => {
                     isWindowWidthOk ? dispatch(toggleBurgerMenu(false)) : null
                   }
                 >
-                  Контакти
+                  {t('header.contacts')}
                 </Link>
               </li>
               <li className={styles.menu__item}>
@@ -150,14 +155,17 @@ const Header = () => {
                       </defs>
                     </svg>
                   </div>
-                  | Вхід до акаунту
+                  | {t('header.login')}
                 </Link>
               </li>
             </ul>
           </nav>
           <div className={styles.header__panel}>
             <div className={styles.panel__list}>
-              <div className={`${styles.panel__item} ${styles.img}`}>
+              <div
+                  className={`${styles.panel__item} ${styles.img}`}
+                  onClick={() => dispatch(toggleLanguageMenu())}
+              >
                 <svg
                   width="18"
                   height="19"

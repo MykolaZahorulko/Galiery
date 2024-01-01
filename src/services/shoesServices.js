@@ -3,7 +3,10 @@ const shoes = [
         article: 'DQ4488-001',
         name: 'Nike SB Dunk Low Pro QS',
         sizes: ['38', '39', '40', '41', '44', '46'],
-        color: 'чорний/білий/різнокольоровий',
+        color: {
+            uk: 'чорний/білий/різнокольоровий',
+            en: 'black/white/multicolor'
+        },
         price: '120€',
         isSoon: true,
         previewPhoto: './images/previewPhotos/DQ4488-001PreviewPhoto.png',
@@ -13,7 +16,10 @@ const shoes = [
         article: 'DX4356-600',
         name: 'Nike Dunk Low Plum Eclipse',
         sizes: ['34', '36', '41', '42', '44', '49'],
-        color: 'коричневий/білий',
+        color: {
+            uk: 'коричневий/білий',
+            en: 'brown/white'
+        },
         price: '120€',
         isSoon: true,
         previewPhoto: './images/previewPhotos/DX4356-600PreviewPhoto.png',
@@ -23,7 +29,10 @@ const shoes = [
         article: 'SS23B20',
         name: 'Supreme Inside Out Box',
         sizes: ['S', 'M', 'L', 'XL'],
-        color: 'чорний',
+        color: {
+            uk: 'чорний',
+            en: 'black'
+        },
         price: '180€',
         isSoon: true,
         previewPhoto: './images/previewPhotos/SS23B20PreviewPhoto.png',
