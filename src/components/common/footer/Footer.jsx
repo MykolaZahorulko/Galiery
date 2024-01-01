@@ -136,7 +136,7 @@ const Footer = () => {
           <div className={styles.footer__item}>
             <h3 className={styles.footer__item_title}>{t('footer.links')}</h3>
             <div className={styles.footer__item_link}>
-              <Link to="/">{t('footer.main')}</Link>
+              <Link to="/Galiery/">{t('footer.main')}</Link>
             </div>
             <div className={styles.footer__item_link}>
               <Link to="/faq" className={styles.footer__item_link}>

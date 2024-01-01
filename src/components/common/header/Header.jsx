@@ -32,7 +32,7 @@ const Header = () => {
 
           </div>
           <div className={styles.header__logo}>
-            <Link to="/">
+            <Link to="/Galiery/">
               <span>g</span>aliery
             </Link>
           </div>
@@ -51,7 +51,7 @@ const Header = () => {
               <li className={styles.menu__item}>
                 <Link
                   className={styles.menu__link}
-                  to="/"
+                  to="/Galiery/"
                   onClick={() =>
                     isWindowWidthOk ? dispatch(toggleBurgerMenu(false)) : null
                   }

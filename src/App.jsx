@@ -20,7 +20,7 @@ const App = () => {
             <Layout>
                 <PageLoadAnimation>
                     <Routes>
-                        <Route path="/" element={<Home/>}/>
+                        <Route path="/Galiery/" element={<Home/>}/>
                         <Route path="/:article" element={<ShoeBuy/>}/>
                         <Route path="/preview" element={<Preview/>}/>
                         <Route path="/subscription" element={<Subscription/>}/>
