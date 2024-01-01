@@ -18,11 +18,15 @@ const Register = () => {
                         <Input
                             tabIndex={1}
                             type={"text"}
+                            name="username"
+                            autocomplete="username"
                             placeholder={t('register.name')}
                         />
                         <Input
                             tabIndex={2}
                             type={"text"}
+                            name="userLastname"
+                            autocomplete="off"
                             placeholder={t('register.secondName')}
                         />
                     </div>
@@ -30,24 +34,31 @@ const Register = () => {
                         className={styles.input_margin}
                         tabIndex={3}
                         type={"text"}
+                        autocomplete="off"
                         placeholder={t('register.mail')}
                     />
                     <Input
                         className={styles.input_margin}
                         tabIndex={4}
                         type={"text"}
+                        autocomplete="off"
                         placeholder={t('register.confirmMail')}
                     />
                     <Input
                         tabIndex={5}
                         type={"password"}
+                        name="password"
+                        autocomplete="new-password"
                         placeholder={t('register.password')}
                     />
-                    <label htmlFor="email" className={`${styles.register__label} ${styles.label_text} ${styles.input_margin}`}>{t('register.passwordInfo')}</label>
+                    <label htmlFor="email"
+                           className={`${styles.register__label} ${styles.label_text} ${styles.input_margin}`}>{t('register.passwordInfo')}</label>
                     <Input
                         className={styles.input_margin}
                         tabIndex={6}
                         type={"password"}
+                        name="confirmPassword"
+                        autocomplete="off"
                         placeholder={t('register.confirmPassword')}
                     />
                     <Input
@@ -56,7 +67,8 @@ const Register = () => {
                         type={"tel"}
                         placeholder={t('register.phone')}
                     />
-                    <Checkbox className={`${styles.register__checkbox_first} ${styles.input_margin}`}>{t('register.letter')}</Checkbox>
+                    <Checkbox
+                        className={`${styles.register__checkbox_first} ${styles.input_margin}`}>{t('register.letter')}</Checkbox>
                     <Checkbox className={styles.register__checkbox_second}>{t('register.confirm')}</Checkbox>
                     <Button isFill={true}>{t('register.signUp')}</Button>
                 </form>

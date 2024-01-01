@@ -20,12 +20,16 @@ const Login = () => {
                     <div className={styles.signin__inputContainer}>
                         <Input
                             tabIndex={1}
-                            type={"text"}
+                            type="text"
+                            name="username"
+                            autocomplete="username"
                             placeholder={t('login.mail')}
                         />
                         <Input
                             tabIndex={2}
-                            type={"password"}
+                            type="password"
+                            name="password"
+                            autocomplete="new-password"
                             placeholder={t('login.password')}
                         />
                     </div>
