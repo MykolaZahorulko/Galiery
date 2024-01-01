@@ -1,8 +1,26 @@
-# React + Vite
+# Galiery App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Overview
 
-Currently, two official plugins are available:
+**Galiery** is an image gallery application developed by Mykola Zahorulko using Vite and React.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
+
+- **Intuitive User Interface:** User-friendly design for easy navigation.
+  
+- **Responsive Design:** Ensures a smooth viewing experience on various devices.
+
+- **Vite and React Stack:** Utilizes Vite build tool and React library for high performance.
+
+## Getting Started
+
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/MykolaZahorulko/Galiery
+2. **Install dependencies using [Yarn](https://yarnpkg.com/):**
+   ```bash
+   yarn
+3. **Start the development server:**
+   ```bash
+   yarn dev
+## Author: [Mykola Zahorulko](https://github.com/MykolaZahorulko)

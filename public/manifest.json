@@ -1,0 +1,15 @@
+{
+  "name": "Gallery of clothes and shoes",
+  "short_name": "Galiery",
+  "description": "Web site where you can buy new fashion, original thing",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#0F0E0E",
+  "orientation": "any",
+  "scope": "/",
+  "related_applications": [],
+  "prefer_related_applications": false,
+  "categories": [
+    "utilities"
+  ]
+}

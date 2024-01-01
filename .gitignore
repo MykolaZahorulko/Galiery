@@ -21,3 +21,8 @@ dist-ssr
 *.sw?
 # Yarn Integrity file
 .yarn-integrity
+
+# Images
+.svg
+.png
+.jpg
