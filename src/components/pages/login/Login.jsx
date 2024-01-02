@@ -30,7 +30,7 @@ const Login = () => {
                         />
                     </div>
                     <div className={`${styles.signin__password_reset} ${styles.label_text}`}>
-                        <Link to={'/'}>
+                        <Link to={'/Galiery/'}>
                             {t('login.forgotPassword')}
                         </Link>
                     </div>
@@ -39,7 +39,7 @@ const Login = () => {
                 <div className={`${styles.signin__isProfile_text} ${styles.label_text}`}>
                     {t('login.noAccount')}
                 </div>
-                <Link to={"/register"} ><Button isFill={true}>
+                <Link to={"/Galiery/register"} ><Button isFill={true}>
                     {t('login.signUp')}
                 </Button></Link>
             </div>

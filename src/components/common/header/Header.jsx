@@ -32,7 +32,7 @@ const Header = () => {
 
           </div>
           <div className={styles.header__logo}>
-            <Link to="/">
+            <Link to="/Galiery/">
               <span>g</span>aliery
             </Link>
           </div>
@@ -51,7 +51,7 @@ const Header = () => {
               <li className={styles.menu__item}>
                 <Link
                   className={styles.menu__link}
-                  to="/"
+                  to="/Galiery/"
                   onClick={() =>
                     isWindowWidthOk ? dispatch(toggleBurgerMenu(false)) : null
                   }
@@ -80,7 +80,7 @@ const Header = () => {
               <li className={styles.menu__item}>
                 <Link
                   className={styles.menu__link}
-                  to="/preview"
+                  to="/Galiery/preview"
                   onClick={() =>
                     isWindowWidthOk ? dispatch(toggleBurgerMenu(false)) : null
                   }
@@ -91,7 +91,7 @@ const Header = () => {
               <li className={styles.menu__item}>
                 <Link
                   className={styles.menu__link}
-                  to="/subscription"
+                  to="/Galiery/subscription"
                   onClick={() =>
                     isWindowWidthOk ? dispatch(toggleBurgerMenu(false)) : null
                   }
@@ -102,7 +102,7 @@ const Header = () => {
               <li className={styles.menu__item}>
                 <Link
                   className={styles.menu__link}
-                  to="/contacts"
+                  to="/Galiery/contacts"
                   onClick={() =>
                     isWindowWidthOk ? dispatch(toggleBurgerMenu(false)) : null
                   }
@@ -113,7 +113,7 @@ const Header = () => {
               <li className={styles.menu__item}>
                 <Link
                   className={styles.menu__link}
-                  to="/faq"
+                  to="/Galiery/faq"
                   onClick={() =>
                     isWindowWidthOk ? dispatch(toggleBurgerMenu(false)) : null
                   }
@@ -124,7 +124,7 @@ const Header = () => {
               <li className={styles.menu__item}>
                 <Link
                   className={styles.menu__link}
-                  to="/login"
+                  to="/Galiery/login"
                   onClick={() =>
                     isWindowWidthOk ? dispatch(toggleBurgerMenu(false)) : null
                   }
@@ -181,7 +181,7 @@ const Header = () => {
               </div>
               <Link
                 className={`${styles.panel__item} ${styles.img}`}
-                to="/login"
+                to="/Galiery/login"
                 onClick={() =>
                   isWindowWidthOk ? dispatch(toggleBurgerMenu(false)) : null
                 }
@@ -208,7 +208,7 @@ const Header = () => {
               </Link>
               <Link
                 className={`${styles.panel__item} ${styles.img}`}
-                to="/cart"
+                to="/Galiery/cart"
                 onClick={() =>
                   isWindowWidthOk ? dispatch(toggleBurgerMenu(false)) : null
                 }

@@ -6,7 +6,6 @@ yarn-error.log*
 lerna-debug.log*
 
 node_modules
-images
 dist
 dist-ssr
 *.local
@@ -21,8 +20,3 @@ dist-ssr
 *.sw?
 # Yarn Integrity file
 .yarn-integrity
-
-# Images
-.svg
-.png
-.jpg

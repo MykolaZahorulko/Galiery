@@ -1,7 +1,7 @@
 import {defineConfig} from 'vite'
 
 export default defineConfig({
-    base: "/galiery/",
+    base: "/Galiery/",
     optimizeDeps: {
         include: ['react-router-dom'],
     },

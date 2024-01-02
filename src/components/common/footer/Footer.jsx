@@ -136,20 +136,20 @@ const Footer = () => {
           <div className={styles.footer__item}>
             <h3 className={styles.footer__item_title}>{t('footer.links')}</h3>
             <div className={styles.footer__item_link}>
-              <Link to="/">{t('footer.main')}</Link>
+              <Link to="/Galiery/">{t('footer.main')}</Link>
             </div>
             <div className={styles.footer__item_link}>
-              <Link to="/faq" className={styles.footer__item_link}>
+              <Link to="/Galiery/faq" className={styles.footer__item_link}>
                 {t('footer.faq')}
               </Link>
             </div>
             <div className={styles.footer__item_link}>
-              <Link to="/shipping-policy" className={styles.footer__item_link}>
+              <Link to="/Galiery/shipping-policy" className={styles.footer__item_link}>
                 {t('footer.shippingPolicy')}
               </Link>
             </div>
             <div className={styles.footer__item_link}>
-              <Link to="/terms-of-use" className={styles.footer__item_link}>
+              <Link to="/Galiery/terms-of-use" className={styles.footer__item_link}>
                 {t('footer.termsOfUse')}
               </Link>
             </div>

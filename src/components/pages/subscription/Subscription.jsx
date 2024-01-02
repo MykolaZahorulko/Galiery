@@ -1,6 +1,6 @@
 import React from 'react'
 import styles from './Subscription.module.scss'
-import Input from "../../ui/Input/Input.jsx";
+import Input from "../../ui/input/Input.jsx";
 import Select from "../../ui/select/Select.jsx";
 import {useTranslation} from "react-i18next";
 import '../../../i18n'

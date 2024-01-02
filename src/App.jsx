@@ -20,17 +20,18 @@ const App = () => {
             <Layout>
                 <PageLoadAnimation>
                     <Routes>
-                        <Route path="/" element={<Home/>}/>
-                        <Route path="/:article" element={<ShoeBuy/>}/>
-                        <Route path="/preview" element={<Preview/>}/>
-                        <Route path="/subscription" element={<Subscription/>}/>
-                        <Route path="/contacts" element={<Contacts/>}/>
-                        <Route path="/login" element={<Login/>}/>
-                        <Route path="/faq" element={<Faq/>}/>
-                        <Route path="/cart" element={<Cart/>}/>
-                        <Route path="/register" element={<Register/>}/>
-                        <Route path="/terms-of-use" element={<TermsOfUse/>}/>
-                        <Route path="/shipping-policy" element={<ShippingPolicy/>}/>
+                        <Route path="/Galiery/" element={<Home/>}/>
+                        <Route path="/Galiery/:article" element={<ShoeBuy/>}/>
+                        <Route path="/Galiery/preview" element={<Preview/>}/>
+                        <Route path="/Galiery/subscription" element={<Subscription/>}/>
+                        <Route path="/Galiery/contacts" element={<Contacts/>}/>
+                        <Route path="/Galiery/login" element={<Login/>}/>
+                        <Route path="/Galiery/faq" element={<Faq/>}/>
+                        <Route path="/Galiery/cart" element={<Cart/>}/>
+                        <Route path="/Galiery/register" element={<Register/>}/>
+                        <Route path="/Galiery/terms-of-use" element={<TermsOfUse/>}/>
+                        <Route path="/Galiery/shipping-policy" element={<ShippingPolicy/>}/>
+                        <Route path="*" element={<div>This page does not exist</div>}/>
                     </Routes>
                 </PageLoadAnimation>
             </Layout>

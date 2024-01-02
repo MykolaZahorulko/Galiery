@@ -1,6 +1,6 @@
 import React from 'react'
 import styles from './Register.module.scss'
-import Input from "../../ui/Input/Input.jsx";
+import Input from "../../ui/input/Input.jsx";
 import Button from "../../ui/button/Button.jsx";
 import Checkbox from "../../ui/checkbox/Сheckbox.jsx";
 import {useTranslation} from "react-i18next";
