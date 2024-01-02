@@ -17,7 +17,7 @@ const Home = () => {
         <div className={styles.home}>
             <section
                 className={styles.retail}
-                style={{backgroundImage: "url(/images/retail_background.jpg)"}}
+                style={{backgroundImage: "url(./images/retail_background.jpg)"}}
             >
                 <div className={`${styles.retail__container} ${styles.container}`}>
                     <div className={styles.retail__content}>
@@ -44,7 +44,7 @@ const Home = () => {
                                 <div className={styles.retail__shoe}>
                                     <div className={`${styles.retail__shoe_img0} ${styles.img}`}>
                                         <img
-                                            src="/images/retail_shoe/retailShoe1.png"
+                                            src="./images/retail_shoe/retailShoe1.png"
                                             alt="Shoe image"
                                         />
                                     </div>
@@ -55,7 +55,7 @@ const Home = () => {
                                 <div className={styles.retail__shoe}>
                                     <div className={`${styles.retail__shoe_img1} ${styles.img}`}>
                                         <img
-                                            src="/images/retail_shoe/retailShoe2.png"
+                                            src="./images/retail_shoe/retailShoe2.png"
                                             alt="Shoe image"
                                         />
                                     </div>
@@ -67,7 +67,7 @@ const Home = () => {
                                 <div className={styles.retail__shoe}>
                                     <div className={`${styles.retail__shoe_img2} ${styles.img}`}>
                                         <img
-                                            src="/images/retail_shoe/retailShoe3.png"
+                                            src="./images/retail_shoe/retailShoe3.png"
                                             alt="Shoe image"
                                         />
                                     </div>
@@ -79,7 +79,7 @@ const Home = () => {
                                 <div className={styles.retail__shoe}>
                                     <div className={`${styles.retail__shoe_img3} ${styles.img}`}>
                                         <img
-                                            src="/images/retail_shoe/retailShoe4.png"
+                                            src="./images/retail_shoe/retailShoe4.png"
                                             alt="Shoe image"
                                         />
                                     </div>
@@ -94,7 +94,7 @@ const Home = () => {
                                 <div className={styles.retail__shoe}>
                                     <div className={`${styles.retail__shoe_img4} ${styles.img}`}>
                                         <img
-                                            src="/images/retail_shoe/retailShoe5.png"
+                                            src="./images/retail_shoe/retailShoe5.png"
                                             alt="Shoe image"
                                         />
                                     </div>
