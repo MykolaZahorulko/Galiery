@@ -20,7 +20,9 @@ select {
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
-    background: url('./images/strSmall.svg') no-repeat 97% center;
+    background: url('../../../assets/icons/strSmall.svg');
+    background-repeat: no-repeat;
+    background-position: 97% center;
 
     &:focus {
       outline: #898989 rem(1.5) solid;

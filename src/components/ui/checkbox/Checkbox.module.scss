@@ -32,7 +32,7 @@ label {
     display: block;
     @include adaptiv-value(width, 19, 12, 1);
     @include adaptiv-value(height, 16, 8, 1);
-    background: url("/images/icons/checked.svg") center / 100% 100% no-repeat;
+    background: url("../../../assets/icons/checked.svg") center / 100% 100% no-repeat;
     top: 50%;
     left: 50%;
     @include translate(-50%, -50%);
